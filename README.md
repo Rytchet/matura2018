@@ -1,4 +1,4 @@
-# Zadania-Maturalne
+# matura2018
 Moje rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
 Linki do zadań:
