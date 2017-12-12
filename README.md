@@ -1,5 +1,5 @@
 # Zadania-Maturalne
-Ćwiczenia do matury z informatyki 2017.
+Moje rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
 Linki do zadań:
 
