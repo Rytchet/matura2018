@@ -23,8 +23,6 @@ We wszystkich plikach 3*365 = 1095 wierszy
 int convertToDec(string number, int base);
 string convertToBin(int number);
 
-// Piotr stêpieñ
-
 const int SIZE = 1095;
 int time1[SIZE], time2[SIZE], time3[SIZE];
 int temp1[SIZE], temp2[SIZE], temp3[SIZE];
