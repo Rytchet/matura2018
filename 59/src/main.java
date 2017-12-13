@@ -1,9 +1,3 @@
-#include <iostream>
-#include <cmath>
-#include <fstream>
-#include <string>
-using namespace std;
-
 /* Treœæ
 Input: "wyniki_liczby.txt"
 1000 ró¿nych liczb od 2 do 9 cyfr
@@ -13,29 +7,18 @@ Input: "wyniki_liczby.txt"
 
 */
 
-const int SIZE = 1000;
-string Stab[SIZE];
-int Itab[SIZE];
-
 /*
 Czynnikiem pierwszym danej liczby naturalnej z³o¿onej jest dowolna liczba 
 pierwsza, która dzieli tê liczbê ca³kowicie. Podaj, ile jest w pliku liczby.txt 
 liczb, w których rozk³adzie na czynniki pierwsze wystêpuj¹ dok³adnie trzy ró¿ne 
 czynniki (mog¹ siê one powtarzaæ), z których ka¿dy jest nieparzysty.
 */
-void z1() {
-  
-}
 
-int main() {
-  ifstream in;
-  in.open("wyniki_liczby.txt");
-  string a;
-  for (int i = 0; i < SIZE; i ++) {
-    in >> a;
-    Stab[i] = a;
-    Itab[i] = atoi(a)
+public class main {
+
+  public static void main(String[] args) {
+    String a = "test";
+    System.out.println(a);
   }
-  
-  in.close();
+
 }
