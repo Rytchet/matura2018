@@ -133,14 +133,14 @@ int main() {
     time3[i] = convertToDec(a, 8);
     temp3[i] = convertToDec(b, 8); 
   }
+  in1.close();
+  in2.close();
+  in3.close();
+  
   z1();
   z2();
   z3();
   z4();
-  
-  in1.close();
-  in2.close();
-  in3.close();
   return 0;
 }
 
