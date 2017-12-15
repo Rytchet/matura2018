@@ -14,8 +14,7 @@ Input: "wyniki_liczby.txt"
 */
 
 const int SIZE = 1000;
-string Stab[SIZE];
-int Itab[SIZE];
+int tab[SIZE];
 
 /*
 Czynnikiem pierwszym danej liczby naturalnej z³o¿onej jest dowolna liczba 
@@ -24,18 +23,22 @@ liczb, w których rozk³adzie na czynniki pierwsze wystêpuj¹ dok³adnie trzy ró¿ne
 czynniki (mog¹ siê one powtarzaæ), z których ka¿dy jest nieparzysty.
 */
 void z1() {
-  
+  int n;
+  for (int i = 0; i < SIZE; i++) {
+    n = tab[i];
+    while (n != 1) {
+      n = tab[i]
+      
+    }
 }
 
 int main() {
   ifstream in;
   in.open("wyniki_liczby.txt");
-  string a;
   for (int i = 0; i < SIZE; i ++) {
-    in >> a;
-    Stab[i] = a;
-    Itab[i] = atoi(a)
+    in >> tab[i];
   }
-  
   in.close();
+  
+  z1();
 }
