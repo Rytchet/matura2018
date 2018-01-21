@@ -5,7 +5,7 @@
 using namespace std;
 
 /* Treœæ
-Input: "wyniki_liczby.txt"
+Input: "liczby.txt"
 1000 ró¿nych liczb od 2 do 9 cyfr
 */
 
