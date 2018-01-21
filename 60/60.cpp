@@ -10,6 +10,7 @@ Input: "liczby.txt"
 
 /* Wyniki
 6.1: 12, Ostatnie dwie 540, 633
+6.2: 
 */
 
 const int SIZE = 200;
