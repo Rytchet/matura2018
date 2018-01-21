@@ -1,0 +1,58 @@
+#include <iostream>
+#include <fstream>
+
+/* Treœæ
+Input: "ciagi.txt"
+Ci¹g liczb ca³kowitych nazywamy ci¹giem arytmetycznym, jeœli ró¿nica miêdzy 
+ka¿dymi dwoma kolejnymi jego wyrazami jest identyczna. Ci¹giem arytmetycznym 
+jest na przyk³ad ci¹g (1, 3, 5, 7, 9). Jest to ci¹g o ró¿nicy 2, poniewa¿ ka¿dy 
+wyraz tego ci¹gu, poza pierwszym, ró¿ni siê od poprzedniego wyrazu o 2. 
+Ci¹g (17, 22, 27, 32, 37) jest ci¹giem arytmetycznym o ró¿nicy 5. W tym zadaniu 
+rozpatrujemy tylko takie ci¹gi arytmetyczne, które maj¹ dodatni¹ ró¿nicê oraz co
+najmniej piêæ wyrazów.
+W pliku ciagi.txt danych jest 100 ci¹gów sk³adaj¹cych siê z liczb ca³kowitych 
+dodatnich, nieprzekraczaj¹cych 1 000 000. Ka¿dy ci¹g opisany jest w dwóch 
+wierszach: pierwszy zawiera liczbê wyrazów ci¹gu (co najmniej 5 i co 
+najwy¿ej 1000), zaœ drugi — kolejne wyrazy ci¹gu, oddzielone pojedynczymi 
+odstêpami. Dla przyk³adu pierwsze cztery wiersze pliku maj¹ nastêpuj¹c¹ postaæ:
+5
+1 3 6 7 9
+5
+17 22 27 32 37 
+*/
+
+const int SIZE = 100;
+
+/*
+Podaj, ile spoœród podanych w pliku ciagi.txt ci¹gów jest ci¹gami 
+arytmetycznymi. ZnajdŸ wœród nich ci¹g o najwiêkszej ró¿nicy i oblicz jego 
+ró¿nicê. Liczbê ci¹gów arytmetycznych oraz najwiêksz¹ ró¿nicê zapisz w pliku 
+wynik1.txt. 
+*/
+
+void z1() {
+  ifstream in;
+  in.open("ciagi.txt");
+  int tab[1000];
+  int length, difference;
+  int counter = 0, max = 0;
+  bool flag;
+  for (int i = 0; i < SIZE; i++) {
+    flag = true;
+    in >> length;
+    for (int j = 0; j < length; j++) in >> tab[j];
+    difference = tab[1] - tab[0];
+    for (int j = 1; j < length; j++) {
+      if (tab[j] - tab[j - 1] != difference) flag = false;
+    }
+    if (flag) {
+      counter++;
+      if (difference > max) max = difference;
+    }
+  }
+  in.close()
+}
+
+int main() {
+  z1();
+}
