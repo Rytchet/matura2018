@@ -9,8 +9,20 @@ Input: "liczby.txt"
 */
 
 /* Wyniki
-6.1: 12, Ostatnie dwie 540, 633
-6.2: 
+60.1: 12, Ostatnie dwie 540, 633
+60.2: 
+Liczba: 989532
+1 2 3 4 6 9 12 18 36 27487 54974 82461 109948 164922 247383 329844 494766 989532
+Liczba: 131072
+1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 32768 65536 131072
+Liczba: 702027
+1 3 9 27 81 107 243 321 729 963 2187 2889 6561 8667 26001 78003 234009 702027
+Liczba: 461817
+1 3 9 23 69 97 207 291 529 873 1587 2231 4761 6693 20079 51313 153939 461817
+Liczba: 17298
+1 2 3 6 9 18 31 62 93 186 279 558 961 1922 2883 5766 8649 17298
+
+60.3: 988027
 */
 
 const int SIZE = 200;
@@ -66,6 +78,38 @@ void z2() {
   }
 }
 
+
+/*
+ZnajdŸ najwiêksz¹ liczbê w pliku, która jest wzglêdnie pierwsza ze wszystkimi 
+pozosta³ymi, czyli tak¹, która z ¿adn¹ z pozosta³ych liczb nie ma wspólnego 
+dzielnika innego ni¿ 1. 
+*/
+
+// Algorytm Euklidesa / Euclidean Algorithm
+int nwd(int x, int y) {
+  if (x < y) return nwd(y, x);
+  if (y == 0) return x;
+  return nwd(y, x % y);
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  bool flag;
+  int max = 0;
+  for (int i = 0; i < SIZE; i++) {
+    if (tab[i] < max) continue;
+    flag = true;
+    for (int j = 0; j < SIZE; j++) {
+      if (i != j && nwd(tab[i], tab[j]) > 1) {
+        flag = false;
+        break;
+      }
+    }
+    if (flag && tab[i] > max) max = tab[i];
+  }
+  cout << "Max: " << max << endl;
+}
+
 int main() {
   ifstream in;
   in.open("liczby.txt");
@@ -76,4 +120,5 @@ int main() {
   
   z1();
   z2();
+  z3();
 }
