@@ -1,0 +1,2 @@
+Liczba ciagow: 44
+Najwieksza roznica: 246849

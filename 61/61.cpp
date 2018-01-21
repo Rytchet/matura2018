@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+using namespace std;
 
 /* Treœæ
 Input: "ciagi.txt"
@@ -21,6 +22,12 @@ odstêpami. Dla przyk³adu pierwsze cztery wiersze pliku maj¹ nastêpuj¹c¹ postaæ:
 17 22 27 32 37 
 */
 
+/* Wyniki
+61.1:
+Liczba ci¹gów: 44
+Najwiêksza ró¿nica: 246849
+*/
+
 const int SIZE = 100;
 
 /*
@@ -31,6 +38,7 @@ wynik1.txt.
 */
 
 void z1() {
+  cout << "Zadanie 1:" << endl;
   ifstream in;
   in.open("ciagi.txt");
   int tab[1000];
@@ -50,7 +58,13 @@ void z1() {
       if (difference > max) max = difference;
     }
   }
-  in.close()
+  in.close();
+  ofstream out("wynik1.txt");
+  out << "Liczba ciagow: " << counter << "\n";
+  cout << "Liczba ciagow: " << counter << "\n";
+  out << "Najwieksza roznica: " << max << "\n";
+  cout << "Najwieksza roznica: " << max << "\n";
+  out.close();
 }
 
 int main() {
