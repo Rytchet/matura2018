@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 
 /* Treœæ
@@ -35,6 +36,35 @@ void z1() {
   cout << "Ostatnie dwie: " << lastNumber << ", " << lastNumber2 << endl;
 }
 
+/*
+Wœród liczb wystêpuj¹cych w pliku wejœciowym znajdŸ te, które maj¹ dok³adnie 18 
+dzielników naturalnych (wliczaj¹c w nie 1 i sam¹ liczbê). Dla ka¿dej znalezionej 
+liczby wypisz, oprócz jej wartoœci, listê wszystkich jej dzielników, posortowan¹ 
+rosn¹co
+*/
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  int counter;
+  int dividers[18];
+  for (int i = 0; i < SIZE; i++) {
+    counter = 0;
+    for (int j = 1; j <= tab[i]; j++) {
+      if (tab[i] % j == 0) {
+        dividers[counter] = j;
+        counter++;
+      }
+      if (counter > 18) break;
+    }
+    if (counter == 18) {
+      sort(dividers, dividers + 18);
+      cout << "Liczba: " << tab[i] << endl;
+      for (int j = 0; j < 18; j++) cout << dividers[j] << " ";
+      cout << endl;
+    }
+  }
+}
+
 int main() {
   ifstream in;
   in.open("liczby.txt");
@@ -44,4 +74,5 @@ int main() {
   in.close();
   
   z1();
+  z2();
 }
