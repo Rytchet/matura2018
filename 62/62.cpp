@@ -14,8 +14,11 @@ wykorzystanych do uzyskania rozwi¹zania.
 
 /* Wyniki
 61.2:
-Min: 1752 (dec 1002)
-Max: 2755524 (dec 777044)
+Min: 1002
+Max: 777044
+62.2:
+Pierwszy element: 639
+Liczba: 6
 */
 
 const int SIZE = 1000;
@@ -51,11 +54,11 @@ void z1() {
   int min = 9999999;
   int max = 0;
   for (int i = 0; i < SIZE; i++) {
-    if (tab10[i] > max) max = tab10[i];
-    if (tab10[i] < min) min = tab10[i];
+    if (tab8[i] > max) max = tab8[i];
+    if (tab8[i] < min) min = tab8[i];
   }
-  cout << "Najmniejsza: " << decToOct(min) << endl;
-  cout << "Najwieksza: " << decToOct(max) << endl;
+  cout << "Najmniejsza: " << min << endl;
+  cout << "Najwieksza: " << max << endl;
 }
 
 /*
@@ -69,7 +72,7 @@ void z2() {
   int counter = 0, maxCounter = 0, firstNumber = 0;
   int maxFirst;
   for (int i = 1; i < SIZE; i++) {
-    if (tab8[i] > tab8[i - 1]) {
+    if (tab8[i] >= tab8[i - 1]) {
       counter++;
       if (firstNumber == 0) {
         firstNumber = tab8[i - 1];
@@ -91,10 +94,10 @@ void z2() {
 
 int main() {
   ifstream in("liczby1.txt");
-  for (int i = 0; i < SIZE; i++) in >> tab10[i];
+  for (int i = 0; i < SIZE; i++) in >> tab8[i];
   in.close();
   in.open("liczby2.txt");
-  for (int i = 0; i < SIZE; i++) in >> tab8[i];
+  for (int i = 0; i < SIZE; i++) in >> tab10[i];
   in.close();
   
   z1();
