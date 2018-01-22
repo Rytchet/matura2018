@@ -113,7 +113,45 @@ void z2() {
   out.close();
 }
 
+/*
+Plik bledne.txt ma identyczn¹ strukturê jak ciagi.txt, ale zawiera tylko 20 
+ci¹gów. Wiadomo jednak, ¿e wszystkie wystêpuj¹ce w nim ci¹gi s¹ ci¹gami 
+arytmetycznymi z jednym b³êdem: jeden z wyrazów w ka¿dym ci¹gu zosta³ zast¹piony
+przez liczbê naturaln¹ nienale¿¹c¹ do ci¹gu.
+Dla ka¿dego ci¹gu znajdŸ i wypisz b³êdny wyraz. Odpowiedzi zapisz w pliku 
+wynik3.txt, podaj¹c dla ka¿dego ci¹gu b³êdn¹ liczbê w osobnym wierszu, w 
+kolejnoœci zgodnej z kolejnoœci¹ ci¹gów w pliku wejœciowym. 
+*/
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  ifstream in("bledne.txt");
+  ofstream out("wynik3.txt", ios::app);
+  int tab[1000];
+  int length, difference, badNumber;
+  for (int i = 0; i < 20; i++) {
+    in >> length;
+    for (int j = 0; j < length; j++) in >> tab[j];
+    
+    if (tab[1] - tab[0] == tab[2] - tab[1]) difference = tab[1] - tab[0];
+    else difference = tab[4] - tab[3];
+    
+    if (tab[1] - tab[0] != difference && tab[2] - tab[1] == difference)
+      badNumber = tab[0];
+    else {
+      for (int j = 1; j < length; j++)
+        if (tab[j] - tab[j - 1] != difference) badNumber = tab[j];
+    }
+    
+    cout << badNumber << endl;
+    out << badNumber << endl;
+  }
+  in.close();
+  out.close();
+}
+
 int main() {
   z1();
   z2();
+  z3();
 }
