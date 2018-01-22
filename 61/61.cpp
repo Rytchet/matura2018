@@ -26,6 +26,15 @@ odstêpami. Dla przyk³adu pierwsze cztery wiersze pliku maj¹ nastêpuj¹c¹ postaæ:
 61.1:
 Liczba ci¹gów: 44
 Najwiêksza ró¿nica: 246849
+61.2:
+1
+27
+551368
+1000000
+250047
+1000
+35937
+531441
 */
 
 const int SIZE = 100;
