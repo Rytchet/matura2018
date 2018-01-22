@@ -26,6 +26,7 @@ odstêpami. Dla przyk³adu pierwsze cztery wiersze pliku maj¹ nastêpuj¹c¹ postaæ:
 61.1:
 Liczba ci¹gów: 44
 Najwiêksza ró¿nica: 246849
+
 61.2:
 1
 27
@@ -35,6 +36,28 @@ Najwiêksza ró¿nica: 246849
 1000
 35937
 531441
+
+61.3:
+7
+36
+421503
+379577
+321097
+12545
+258380
+949
+531717
+179402
+396721
+351065
+38361
+12953
+156324
+127102
+21988
+237581
+30141
+373541
 */
 
 const int SIZE = 100;
@@ -139,8 +162,12 @@ void z3() {
     if (tab[1] - tab[0] != difference && tab[2] - tab[1] == difference)
       badNumber = tab[0];
     else {
-      for (int j = 1; j < length; j++)
-        if (tab[j] - tab[j - 1] != difference) badNumber = tab[j];
+      for (int j = 1; j < length; j++) {
+        if (tab[j] - tab[j - 1] != difference) {
+          badNumber = tab[j];
+          break;
+        }
+      }
     }
     
     cout << badNumber << endl;
