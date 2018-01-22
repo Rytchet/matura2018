@@ -39,8 +39,7 @@ wynik1.txt.
 
 void z1() {
   cout << "Zadanie 1:" << endl;
-  ifstream in;
-  in.open("ciagi.txt");
+  ifstream in("ciagi.txt");
   int tab[1000];
   int length, difference;
   int counter = 0, max = 0;
@@ -67,6 +66,45 @@ void z1() {
   out.close();
 }
 
+/*
+Dla ka¿dego podanego ci¹gu znajdŸ — jeœli istnieje — najwiêksz¹ wystêpuj¹c¹ w 
+nim liczbê, która jest pe³nym szeœcianem jakiejœ liczby naturalnej (w pierwszym 
+z przyk³adowych ci¹gów jest to 1 = 1^3 , w drugim — 27 = 3^3).
+Znalezione liczby (po jednej dla ka¿dego ci¹gu, w którym taka liczba wystêpuje) 
+zapisz w pliku wynik2.txt, w kolejnoœci zgodnej z kolejnoœci¹ ci¹gów, z których 
+pochodz¹
+*/
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  ifstream in("ciagi.txt");
+  ofstream out("wynik2.txt", ios::app);
+  int tab[1000];
+  int length, max;
+  bool flag;
+  for (int i = 0; i < SIZE; i++) {
+    in >> length;
+    for (int j = 0; j < length; j++) in >> tab[j];
+    max = 0;
+    flag = false;
+    for (int j = 0; j < length; j++) {
+      for (int k = 1; k <= tab[j]; k++) {
+        if (k * k * k == tab[j]) {
+          if (tab[j] > max) max = tab[j];
+          break;
+        }
+      }
+    }
+    if (max > 0) {
+      cout << max << endl;
+      out << max << endl;
+    }
+  }
+  in.close();
+  out.close();
+}
+
 int main() {
   z1();
+  z2();
 }
