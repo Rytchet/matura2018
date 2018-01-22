@@ -58,6 +58,37 @@ void z1() {
   cout << "Najwieksza: " << decToOct(max) << endl;
 }
 
+/*
+ZnajdŸ najd³u¿szy niemalej¹cy ci¹g liczb wystêpuj¹cych w kolejnych wierszach pliku liczby2.txt.
+Podaj pierwszy element tego ci¹gu oraz liczbê jego elementów. Mo¿esz za³o¿yæ,
+¿e jest jeden taki ci¹g. 
+*/
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  int counter = 0, maxCounter = 0, firstNumber = 0;
+  int maxFirst;
+  for (int i = 1; i < SIZE; i++) {
+    if (tab8[i] > tab8[i - 1]) {
+      counter++;
+      if (firstNumber == 0) {
+        firstNumber = tab8[i - 1];
+        counter++;
+      }
+    }
+    else {
+      if (counter > maxCounter) {
+        maxCounter = counter;
+        maxFirst = firstNumber;
+      }
+      firstNumber = 0;
+      counter = 0;
+    }
+  }
+  cout << "Pierwszy element: " << maxFirst << endl;
+  cout << "Liczba elementow: " << maxCounter << endl;
+}
+
 int main() {
   ifstream in("liczby1.txt");
   for (int i = 0; i < SIZE; i++) in >> tab10[i];
@@ -67,4 +98,5 @@ int main() {
   in.close();
   
   z1();
+  z2();
 }
