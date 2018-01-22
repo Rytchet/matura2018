@@ -19,30 +19,15 @@ Max: 777044
 62.2:
 Pierwszy element: 639
 Liczba: 6
+62.3:
+a) 160
+b) 357
+62.4:
+411
+625
 */
 
 const int SIZE = 1000;
-int tab10[SIZE], tab8[SIZE];
-
-int octToDec(int x) {
-  int answer, counter = 1;
-  while (x > 0) {
-    answer += (x % 10 * counter);
-    counter *= 8;
-    x = x / 10;
-  }
-  return answer;
-}
-
-int decToOct(int x) {
-  int answer, counter = 1;
-  while (x > 0) {
-    answer += (x % 8 * counter);
-    counter *= 10;
-    x = x / 8;
-  }
-  return answer;
-}
 
 /*
 Wyszukaj w pliku liczby1.txt dwie liczby, najmniejsz¹ i najwiêksz¹. Podaj wartoœci
@@ -51,11 +36,15 @@ tych liczb w zapisie ósemkowym.
 
 void z1() {
   cout << "Zadanie 1:" << endl;
+  ifstream in("liczby1.txt");
+  int tab[SIZE];
+  for (int i = 0; i < SIZE; i++) in >> tab[i];
+  in.close();
   int min = 9999999;
   int max = 0;
   for (int i = 0; i < SIZE; i++) {
-    if (tab8[i] > max) max = tab8[i];
-    if (tab8[i] < min) min = tab8[i];
+    if (tab[i] < min) min = tab[i];
+    if (tab[i] > max) max = tab[i];
   }
   cout << "Najmniejsza: " << min << endl;
   cout << "Najwieksza: " << max << endl;
@@ -69,13 +58,17 @@ Podaj pierwszy element tego ci¹gu oraz liczbê jego elementów. Mo¿esz za³o¿yæ,
 
 void z2() {
   cout << "Zadanie 2:" << endl;
+  int tab[SIZE];
+  ifstream in("liczby2.txt");
+  for (int i = 0; i < 1000; i++) in >> tab[i];
+  in.close();
   int counter = 0, maxCounter = 0, firstNumber = 0;
   int maxFirst;
   for (int i = 1; i < SIZE; i++) {
-    if (tab8[i] >= tab8[i - 1]) {
+    if (tab[i] >= tab[i - 1]) {
       counter++;
       if (firstNumber == 0) {
-        firstNumber = tab8[i - 1];
+        firstNumber = tab[i - 1];
         counter++;
       }
     }
@@ -92,14 +85,70 @@ void z2() {
   cout << "Liczba elementow: " << maxCounter << endl;
 }
 
+/*
+Porównaj wartoœci liczb zapisanych w wierszach o tych samych numerach w plikach liczby1.txt
+i liczby2.txt. Podaj liczbê wierszy, w których:
+a) liczby maj¹ w obu plikach tak¹ sam¹ wartoœæ;
+b) wartoœæ liczby z pliku liczby1.txt jest wiêksza od wartoœci liczby z pliku liczby2.txt.
+
+Dla przyk³adowych danych:
+liczby1.txt liczby2.txt
+11456       1302
+22666       9654
+546         499
+odp. a) 1 wiersz, bo tylko w drugim wierszu liczby maj¹ tak¹ sam¹ wartoœæ: 22666(8) = 9654(10)
+odp. b) 1 wiersz, bo tylko w pierwszym wierszu wartoœæ liczby w pierwszym pliku jest wiêksza
+ni¿ odpowiadaj¹ca jej wartoœæ w drugim pliku: 11456(8)>1302(10). 
+*/
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  int tab1[SIZE], tab2[SIZE];
+  ifstream in1("liczby1.txt");
+  ifstream in2("liczby2.txt");
+  for (int i = 0; i < SIZE; i++) in1 >> oct >> tab1[i];
+  for (int i = 0; i < SIZE; i++) in2 >> tab2[i];
+  in1.close();
+  in2.close();
+  int aCounter = 0, bCounter = 0;
+  for (int i = 0; i < SIZE; i++) {
+    if (tab1[i] == tab2[i]) aCounter++;
+    if (tab1[i] > tab2[i]) bCounter++;
+  }
+  cout << "a) " <<  aCounter << endl << "b) " << bCounter << endl;
+}
+
+/*
+Podaj, ile razy w zapisie dziesiêtnym wszystkich liczb z pliku liczby2.txt wystêpuje
+cyfra 6 oraz ile razy wyst¹pi³aby ta cyfra, gdyby te same liczby by³y zapisane w systemie
+ósemkowym.
+*/
+
+void z4() {
+  cout << "Zadanie 4:" << endl;
+  ifstream in("liczby2.txt");
+  int tab[SIZE];
+  for (int i = 0; i < SIZE; i++) in >> tab[i];
+  int firstCounter = 0, secondCounter = 0;
+  int number;
+  for (int i = 0; i < SIZE; i++) {
+    number = tab[i];
+    while (number) {
+      if (number % 10 == 6) firstCounter++;
+      number = number / 10;
+    }
+    number = tab[i];
+    while (number) {
+      if (number % 8 == 6) secondCounter++;
+      number = number / 8;
+    }
+  }
+  cout << firstCounter << " " << secondCounter << endl;
+}
+
 int main() {
-  ifstream in("liczby1.txt");
-  for (int i = 0; i < SIZE; i++) in >> tab8[i];
-  in.close();
-  in.open("liczby2.txt");
-  for (int i = 0; i < SIZE; i++) in >> tab10[i];
-  in.close();
-  
   z1();
   z2();
+  z3();
+  z4();
 }
