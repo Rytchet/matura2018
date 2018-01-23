@@ -31,8 +31,11 @@ to zadanie.
 1100111001
 110110110110110110
 
-63.1: 93
+63.2: 93
 
+63.3:
+259 ciagow.
+Max: 248667 Min: 6
 */
 
 const int SIZE = 1000;
@@ -88,11 +91,62 @@ void z2() {
   cout << counter << endl;
 }
 
+/*
+Liczb¹ pó³pierwsz¹ nazywamy tak¹ liczbê, która jest iloczynem dwóch liczb pierwszych.
+Podaj, ile ci¹gów z pliku ciagi.txt jest reprezentacj¹ binarn¹ liczb pó³pierwszych. Dodatkowo
+podaj najwiêksz¹ i najmniejsz¹ liczbê pó³pierwsz¹ w zapisie dziesiêtnym. 
+*/
+
+bool isPrime(int x) {
+  if (x <= 1) return false;
+  if (x % 2 == 0 && x != 2) return false;
+  for (int i = 3; i * i <= x; i += 2) {
+    if (x % i == 0) return false;
+  }
+  return true;
+}
+
+bool isHalfPrime(int x) {
+  if (isPrime(x)) return false;
+  if (x % 2 == 0) return isPrime(x / 2);
+  for (int i = 3; i * i <= x; i++) {
+    if (x % i == 0) return isPrime(x / i);
+  }
+}
+
+int binToDec(string bin) {
+  int n = 0;
+  int base = 1;
+  for (int i = bin.length() - 1; i >= 0; i--) {
+    n += (bin[i] - '0') * base;
+    base *= 2;
+  }
+  return n;
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  int counter = 0, max = 0, min = 999999999;
+  int number;
+  for (int i = 0; i < SIZE; i++) {
+    number = binToDec(tab[i]);
+
+    if (isHalfPrime(number)) {
+      counter++;
+      if (number > max) max = number;
+      if (number < min) min = number;
+    }
+  }
+  cout << counter << " ciagow." << endl;
+  cout << "Max: " << max << " Min: " << min << endl;
+}
+
 int main() {
   ifstream in("ciagi.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
   in.close();
-  
+
   z1();
   z2();
+  z3();
 }
