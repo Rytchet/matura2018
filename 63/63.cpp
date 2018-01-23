@@ -31,6 +31,8 @@ to zadanie.
 1100111001
 110110110110110110
 
+63.1: 93
+
 */
 
 const int SIZE = 1000;
@@ -66,10 +68,31 @@ void z1() {
   }
 }
 
+/*
+Podaj liczbê ci¹gów z pliku ciagi.txt, w których nie wystêpuj¹ obok siebie dwie jedynki. 
+*/
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  int length, counter = 0;
+  for (int i = 0; i < SIZE; i++) {
+    length = tab[i].length();
+    counter++;
+    for (int j = 1; j < length; j++) {
+      if (tab[i][j] == '1' && tab[i][j - 1] == '1') {
+        counter--;
+        break;
+      }
+    }
+  }
+  cout << counter << endl;
+}
+
 int main() {
   ifstream in("ciagi.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
   in.close();
   
   z1();
+  z2();
 }
