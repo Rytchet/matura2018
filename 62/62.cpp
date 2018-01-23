@@ -22,7 +22,7 @@ Liczba: 6
 62.3:
 a) 160
 b) 357
-62.4:
+62.4: (prawdopodobnie b³¹d w odpowiedziach, wyniki s¹ zamienione miejscami)
 411
 625
 */
