@@ -15,7 +15,7 @@ Plik dane_obrazki.txt sk³ada siê z opisu 200 czarno-bia³ych obrazków o rozmiarze
 */
 
 /* Wyniki
-
+64.1: 13, 381
 */
 
 const int SIZE = 200;
