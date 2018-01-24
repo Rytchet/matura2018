@@ -20,33 +20,50 @@ Rewersow: 13
 Najwieksza ilosc czarnych: 381
 
 64.2:
-
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Liczba obrazkow rekurencyjnych: 60
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
+11111111111111111111
+00000000000000000000
 
 64.3:
 Liczba poprawnych:171
 Liczba naprawialnych: 14
 Liczba nienaprawialnych: 15
 Najwiecej zlej parzystosci: 7
+
+64.4:
+(index, wiersz, kolumna)
+(14, 1, 15)
+(19, 4, 20)
+(26, 21, 13)
+(29, 2, 8)
+(33, 15, 21)
+(115, 21, 14)
+(116, 21, 13)
+(129, 21, 14)
+(131, 10, 7)
+(143, 7, 15)
+(154, 7, 7)
+(161, 21, 17)
+(162, 21, 16)
+(187, 21, 18)
 */
 
 const int SIZE = 200;
@@ -72,7 +89,7 @@ void displayPicture() {
   cout << endl;
 }
 
-/*
+/* Zadanie 1
 Obrazek nazywamy rewersem, jeœli liczba wystêpuj¹cych w nim pikseli czarnych jest wiêksza
 od liczby pikseli bia³ych.
 Przyk³ad: W obrazku z powy¿szego przyk³adu wystêpuje 18 pikseli czarnych i 7 pikseli
@@ -102,7 +119,7 @@ int countBlacks() {
   return counter;
 }
 
-/*
+/* Zadanie 2
 Obrazek rozmiaru n × n bêdziemy nazywaæ rekurencyjnym, jeœli n jest parzyste oraz obrazek
 sk³ada siê z 4 kopii tego samego obrazka rozmiaru n/2 * n/2.
 Podaj liczbê obrazków rekurencyjnych w pliku wejœciowym. Ponadto podaj opis pierwszego
@@ -121,17 +138,17 @@ bool isRecurent() {
   return true;
 }
 
-void displayPictureWithoutParity() {
+void displayTaskTwo() {
   for (int i = 0; i < 20; i++) {
     for (int j = 0; j < 20; j++) {
-      cout << tab[i][j] << " ";
+      cout << tab[i][j];
     }
     cout << endl;
   }
   cout << endl;
 }
 
-/*
+/* Zadanie 3
 Obrazek nazywamy poprawnym, jeœli wszystkie bity parzystoœci s¹ w nim poprawne (zarówno
 w wierszach, jak i kolumnach). Obrazek nazywamy naprawialnym, jeœli nie jest poprawny,
 a jednoczeœnie co najwy¿ej jeden bit parzystoœci wiersza i co najwy¿ej jeden bit parzystoœci
@@ -146,9 +163,8 @@ liczba jedynek, w przeciwnym razie bit parzystoœci jest równy 1.
 
 int countWrongParityHorizontal() {
   int sum = 0, counter = 0;
-  for (int i = 0; i < 21; i++) {
+  for (int i = 0; i < 20; i++) {
     for (int j = 0; j < 21; j++) {
-      if (i == 21 && j == 21) continue;
       if (tab[i][j] == '1' && j != 20) sum++;
       if (j == 20) {
         if (sum % 2 == 0 && tab[i][j] == '1') counter++;
@@ -162,9 +178,8 @@ int countWrongParityHorizontal() {
 
 int countWrongParityVertical() {
   int sum = 0, counter = 0;
-  for (int i = 0; i < 21; i++) {
+  for (int i = 0; i < 20; i++) {
     for (int j = 0; j < 21; j++) {
-      if (i == 21 && j == 21) continue;
       if (tab[j][i] == '1' && j != 20) sum++;
       if (j == 20) {
         if (sum % 2 == 0 && tab[j][i] == '1') counter++;
@@ -185,9 +200,20 @@ bool isCorrect () {
 }
 
 bool isRepairable() {
+  if (isCorrect()) return false;
   if (countWrongParityVertical() < 2 && countWrongParityHorizontal() < 2)
     return true;
 }
+
+/* Zadanie 4
+W obrazku naprawialnym wystarczy zmieniæ jedn¹ wartoœæ, aby uzyskaæ obrazek poprawny.
+Dok³adniej, jeœli niepoprawne s¹ bity parzystoœci i-tego wiersza i j-tej kolumny, wystarczy
+zmieniæ j-ty piksel w i-tym wierszu. Jeœli niepoprawny jest dok³adnie jeden bit parzystoœci
+(wiersza albo kolumny), wystarczy zmieniæ ten bit parzystoœci. 
+Podaj numery obrazków naprawialnych, przyjmuj¹c, ¿e numery kolejnych obrazków w pliku
+to 1, 2, 3 itd. Przy numerze ka¿dego obrazka naprawialnego podaj numer wiersza i kolumny
+wartoœci, któr¹ wystarczy zmieniæ, aby uzyskaæ obrazek poprawny. 
+*/
 
 int main() {
   // Zadanie 1
@@ -198,8 +224,10 @@ int main() {
   // Zadanie 3
   int correctCounter = 0, repairableCounter = 0, unrepairableCounter = 0, 
       maxWrongParity = 0, wrongParity;
+  // Zadanie 4
+  int pictureCounter = 0, controlSum, line, column;
   
-  for (int i = 0; i < SIZE; i++) {
+  for (int n = 0; n < SIZE; n++) {
     readPicture();
     // Zadanie 1
     if (isRewers()) rewersCounter++;
@@ -208,8 +236,10 @@ int main() {
     // Zadanie 2
     if (isRecurent() && recurentFlag) {
       cout << "Obrazek do zadania 2: " << endl;
-      displayPictureWithoutParity();
+      displayTaskTwo();
       recurentFlag = false;
+      // Pod koniec pêtli zadanie 4
+      cout << endl << "Zadanie 4: (index, wiersz, kolumna)" << endl; 
     }
     if (isRecurent()) recurentCounter++;
     
@@ -219,9 +249,52 @@ int main() {
     else unrepairableCounter++;
     wrongParity = countWrongParity();
     if (wrongParity > maxWrongParity) maxWrongParity = wrongParity;
+    
+    // Zadanie 4
+    pictureCounter++;
+    if (isRepairable()) {
+      column = 0;
+      line = 0;
+      cout << "(" << pictureCounter << ", ";
+      // Sprawdzenie bitu poziomo
+      if (countWrongParityHorizontal() == 1) {
+        controlSum = 0;
+        for (int i = 0; i < 20; i++) {
+          for (int j = 0; j < 21; j++) {
+            if (tab[i][j] == '1' && j != 20) controlSum++;
+            if (j == 20) {
+              if ((controlSum % 2 == 0 && tab[i][j] == '1') ||
+                  (controlSum % 2 == 1 && tab[i][j] == '0')) {
+                line = i + 1; 
+              }
+            }
+          }
+          controlSum = 0;
+        }
+      }
+      // Sprawdzenie bitu pionowo
+      if (countWrongParityVertical() == 1) {
+        controlSum = 0;
+        for (int i = 0; i < 20; i++) {
+          for (int j = 0; j < 21; j++) {
+            if (tab[j][i] == '1' && j != 20) controlSum++;
+            if (j == 20) {
+              if ((controlSum % 2 == 0 && tab[j][i] == '1') ||
+                  (controlSum % 2 == 1 && tab[j][i] == '0')) {
+                column = i + 1; 
+              }
+            }
+          }
+          controlSum = 0;
+        }
+      }
+      if (line == 0) line = 21;
+      if (column == 0) column = 21;
+      cout << line << ", " << column << ")" << endl;
+    }
   }
   
-  cout << "Zadanie 1:" << endl;
+  cout << endl << "Zadanie 1:" << endl;
   cout << "Rewersow: " << rewersCounter << endl;
   cout << "Najwieksza ilosc czarnych: " << maxBlacks << endl << endl;
   
