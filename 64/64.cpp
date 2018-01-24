@@ -122,9 +122,73 @@ void displayPictureWithoutParity() {
   cout << endl;
 }
 
+/*
+Obrazek nazywamy poprawnym, jeœli wszystkie bity parzystoœci s¹ w nim poprawne (zarówno
+w wierszach, jak i kolumnach). Obrazek nazywamy naprawialnym, jeœli nie jest poprawny,
+a jednoczeœnie co najwy¿ej jeden bit parzystoœci wiersza i co najwy¿ej jeden bit parzystoœci
+kolumny jest w nim niepoprawny.
+Natomiast nienaprawialnym nazywamy obrazek, który nie jest poprawny i nie jest naprawialny. 
+Podaj liczbê obrazków poprawnych, liczbê obrazków naprawialnych oraz liczbê obrazków
+nienaprawialnych. Ponadto podaj najwiêksz¹ liczbê b³êdnych bitów parzystoœci wystêpuj¹-
+cych w jednym obrazku.
+Bit parzystoœci ci¹gu z³o¿onego z zer i jedynek jest równy 0, gdy w ci¹gu tym wystêpuje parzysta
+liczba jedynek, w przeciwnym razie bit parzystoœci jest równy 1.
+*/
+
+int countWrongParityHorizontal() {
+  int sum = 0, counter = 0;
+  for (int i = 0; i < 21; i++) {
+    for (int j = 0; j < 21; j++) {
+      if (i == 21 && j == 21) continue;
+      if (tab[i][j] == '1' && j != 20) sum++;
+      if (j == 20) {
+        if (sum % 2 == 0 && tab[i][j] == '1') counter++;
+        if (sum % 2 == 1 && tab[i][j] == '0') counter++; 
+      }
+    }
+    sum = 0;
+  }
+  return counter;
+}
+
+int countWrongParityVertical() {
+  int sum = 0, counter = 0;
+  for (int i = 0; i < 21; i++) {
+    for (int j = 0; j < 21; j++) {
+      if (i == 21 && j == 21) continue;
+      if (tab[j][i] == '1' && j != 20) sum++;
+      if (j == 20) {
+        if (sum % 2 == 0 && tab[j][i] == '1') counter++;
+        if (sum % 2 == 1 && tab[j][i] == '0') counter++; 
+      }
+    }
+    sum = 0;
+  }
+  return counter;
+}
+
+int countWrongParity() {
+  return countWrongParityHorizontal() + countWrongParityVertical();
+}
+
+bool isCorrect () {
+  if (countWrongParity() == 0) return true;
+}
+
+bool isRepairable() {
+  if (countWrongParityVertical() < 2 && countWrongParityHorizontal() < 2)
+    return true;
+}
+
 int main() {
+  // Zadanie 1
   int rewersCounter = 0, maxBlacks = 0;
-  int recurentCounter = 0, recurentFlag = true;
+  // Zadanie 2
+  int recurentCounter = 0;
+  bool recurentFlag = true;
+  // Zadanie 3
+  int correctCounter = 0, repairableCounter = 0, unrepairableCounter = 0, 
+      maxWrongParity = 0, wrongParity;
   
   for (int i = 0; i < SIZE; i++) {
     readPicture();
@@ -139,6 +203,13 @@ int main() {
       recurentFlag = false;
     }
     if (isRecurent()) recurentCounter++;
+    
+    // Zadanie 3
+    if (isCorrect()) correctCounter++;
+    else if (isRepairable()) repairableCounter++;
+    else unrepairableCounter++;
+    wrongParity = countWrongParity();
+    if (wrongParity > maxWrongParity) maxWrongParity = wrongParity;
   }
   
   cout << "Zadanie 1:" << endl;
@@ -146,10 +217,12 @@ int main() {
   cout << "Najwieksza ilosc czarnych: " << maxBlacks << endl << endl;
   
   cout << "Zadanie 2:" << endl;
-  cout << "Liczba obrazkow rekurencyjnych: " << recurentCounter;
+  cout << "Liczba obrazkow rekurencyjnych: " << recurentCounter << endl << endl;
+  
+  cout << "Zadanie 3:" << endl;
+  cout << "Liczba poprawnych:" << correctCounter << endl;
+  cout << "Liczba naprawialnych: " << repairableCounter << endl;
+  cout << "Liczba nienaprawialnych: " << unrepairableCounter << endl;
+  cout << "Najwiecej zlej parzystosci: " << maxWrongParity << endl << endl;
+  
 }
-
-
-
-
-
