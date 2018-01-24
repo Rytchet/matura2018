@@ -15,9 +15,12 @@ Plik dane_obrazki.txt sk³ada siê z opisu 200 czarno-bia³ych obrazków o rozmiarze
 */
 
 /* Wyniki
-64.1: 13, 381
+64.1:
+Rewersow: 13
+Najwieksza ilosc czarnych: 381
 
-64.2: 60,
+64.2:
+
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -38,6 +41,12 @@ Plik dane_obrazki.txt sk³ada siê z opisu 200 czarno-bia³ych obrazków o rozmiarze
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+64.3:
+Liczba poprawnych:171
+Liczba naprawialnych: 14
+Liczba nienaprawialnych: 15
+Najwiecej zlej parzystosci: 7
 */
 
 const int SIZE = 200;
