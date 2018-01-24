@@ -16,6 +16,28 @@ Plik dane_obrazki.txt sk³ada siê z opisu 200 czarno-bia³ych obrazków o rozmiarze
 
 /* Wyniki
 64.1: 13, 381
+
+64.2: 60,
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 */
 
 const int SIZE = 200;
@@ -71,18 +93,60 @@ int countBlacks() {
   return counter;
 }
 
+/*
+Obrazek rozmiaru n × n bêdziemy nazywaæ rekurencyjnym, jeœli n jest parzyste oraz obrazek
+sk³ada siê z 4 kopii tego samego obrazka rozmiaru n/2 * n/2.
+Podaj liczbê obrazków rekurencyjnych w pliku wejœciowym. Ponadto podaj opis pierwszego
+obrazka rekurencyjnego wystêpuj¹cego w pliku. W opisie obrazka pomiñ bity parzystoœci.
+*/
+
+bool isRecurent() {
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      if (tab[i][j] != tab[i][j + 10] || tab[i][j] != tab[i + 10][j] || 
+          tab[i][j] != tab[i+10][j+10]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+void displayPictureWithoutParity() {
+  for (int i = 0; i < 20; i++) {
+    for (int j = 0; j < 20; j++) {
+      cout << tab[i][j] << " ";
+    }
+    cout << endl;
+  }
+  cout << endl;
+}
+
 int main() {
   int rewersCounter = 0, maxBlacks = 0;
+  int recurentCounter = 0, recurentFlag = true;
   
   for (int i = 0; i < SIZE; i++) {
     readPicture();
+    // Zadanie 1
     if (isRewers()) rewersCounter++;
     if (countBlacks() > maxBlacks) maxBlacks = countBlacks();
+    
+    // Zadanie 2
+    if (isRecurent() && recurentFlag) {
+      cout << "Obrazek do zadania 2: " << endl;
+      displayPictureWithoutParity();
+      recurentFlag = false;
+    }
+    if (isRecurent()) recurentCounter++;
   }
   
   cout << "Zadanie 1:" << endl;
   cout << "Rewersow: " << rewersCounter << endl;
-  cout << "Najwieksza ilosc czarnych: " << maxBlacks;
+  cout << "Najwieksza ilosc czarnych: " << maxBlacks << endl << endl;
+  
+  cout << "Zadanie 2:" << endl;
+  cout << "Liczba obrazkow rekurencyjnych: " << recurentCounter;
 }
 
 
