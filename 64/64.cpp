@@ -22,15 +22,6 @@ const int SIZE = 200;
 ifstream in("dane_obrazki.txt");
 char tab[21][21];
 
-/*
-Obrazek nazywamy rewersem, jeœli liczba wystêpuj¹cych w nim pikseli czarnych jest wiêksza
-od liczby pikseli bia³ych.
-Przyk³ad: W obrazku z powy¿szego przyk³adu wystêpuje 18 pikseli czarnych i 7 pikseli
-bia³ych. Zatem jest on rewersem.
-Podaj, ile jest w pliku obrazków, które s¹ rewersami. Podaj te¿ najwiêksz¹ liczbê pikseli czarnych
-wystêpuj¹cych w jednym obrazku. 
-*/
-
 void readPicture() {
   for (int i = 0; i < 21; i++) {
     for (int j = 0; j < 21; j++) {
@@ -50,6 +41,15 @@ void displayPicture() {
   cout << endl;
 }
 
+/*
+Obrazek nazywamy rewersem, jeœli liczba wystêpuj¹cych w nim pikseli czarnych jest wiêksza
+od liczby pikseli bia³ych.
+Przyk³ad: W obrazku z powy¿szego przyk³adu wystêpuje 18 pikseli czarnych i 7 pikseli
+bia³ych. Zatem jest on rewersem.
+Podaj, ile jest w pliku obrazków, które s¹ rewersami. Podaj te¿ najwiêksz¹ liczbê pikseli czarnych
+wystêpuj¹cych w jednym obrazku. 
+*/
+
 bool isRewers() {
   int black = 0, white = 0;
   for (int i = 0; i < 20; i++) {
@@ -61,16 +61,28 @@ bool isRewers() {
   return black > white;
 }
 
+int countBlacks() {
+  int counter = 0;
+  for (int i = 0; i < 20; i++) {
+    for (int j = 0; j < 20; j++) {
+      if (tab[i][j] == '1') counter++;
+    }
+  }
+  return counter;
+}
+
 int main() {
-  int rewersCounter = 0;
+  int rewersCounter = 0, maxBlacks = 0;
   
   for (int i = 0; i < SIZE; i++) {
     readPicture();
     if (isRewers()) rewersCounter++;
+    if (countBlacks() > maxBlacks) maxBlacks = countBlacks();
   }
   
   cout << "Zadanie 1:" << endl;
   cout << "Rewersow: " << rewersCounter << endl;
+  cout << "Najwieksza ilosc czarnych: " << maxBlacks;
 }
 
 
