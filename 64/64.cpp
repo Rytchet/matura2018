@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-
+// Czeœæ Dominisia
 /* Treœæ
 Bit parzystoœci ci¹gu z³o¿onego z zer i jedynek jest równy 0, gdy w ci¹gu tym wystêpuje parzysta
 liczba jedynek, w przeciwnym razie bit parzystoœci jest równy 1.
