@@ -34,6 +34,16 @@ Przyk³ad
 6661 26393 175803773
 5881 28429 167190949
 18587 21739 404062793
+
+66.3:
+681 231880 231881
+683 233244 233245
+
+1021 521220 521221
+1023 523264 523265
+
+1701 1446700 1446701
+1703 1450104 1450105
 */
 
 const int SIZE = 1000;
@@ -94,7 +104,41 @@ void z2() {
   cout << endl;
 }
 
+/*
+Wypisz z pliku trojki.txt wszystkie pary s¹siaduj¹cych ze sob¹ wierszy, takie ¿e liczby
+w tych wierszach s¹ d³ugoœciami boków trójk¹tów prostok¹tnych. 
+*/
+
+bool isRightTriangle(int a, int b, int c) {
+  if ((a * a) + (b * b) == (c * c) || 
+      (a * a) + (c * c) == (b * b) ||
+      (c * c) + (b * b) == (a * a)) {
+    return true;
+  }
+  return false;
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  ifstream in("trojki.txt");
+  int tab[SIZE][3];
+  for (int i = 0; i < SIZE; i++) {
+    in >> tab[i][0] >> tab[i][1] >> tab[i][2];
+  }
+  for (int i = 1; i < SIZE; i++) {
+    if (isRightTriangle(tab[i - 1][0], tab[i - 1][1], tab[i - 1][2]) &&
+        isRightTriangle(tab[i][0], tab[i][1], tab[i][2])) {
+          
+      display(tab[i - 1][0], tab[i - 1][1], tab[i - 1][2]);
+      display(tab[i][0], tab[i][1], tab[i][2]);
+    }
+  }
+  in.close();
+  cout << endl;
+}
+
 int main() {
   z1();
   z2();
+  z3();
 }
