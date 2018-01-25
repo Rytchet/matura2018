@@ -21,18 +21,22 @@ pliku, w którym zapisany jest obraz fraktala.
 
 const int SIZE = 40;
 int tab[SIZE];
-ofstream out("test.txt", ios::app);
+ofstream out("wyniki.txt", ios::app);
+
+void startTask(int n) {
+  cout << "Zadanie " << n << ":" << endl;
+  out << "Zadanie " << n << ":" << endl;
+}
 
 /* Zadanie 1
 Podaj wartoœci F10, F20, F30, F40. Zapisz ka¿d¹ z liczb w osobnym wierszu
 */
 
 void z1() {
-  cout << "Zadanie 1:" << endl;
+  startTask(1);
   cout << tab[9] << endl << tab[19] << endl << tab[29] << endl;
   cout << tab[39] << endl << endl;
   
-  out << "Zadanie 1:" << endl;
   out << tab[9] << endl << tab[19] << endl << tab[29] << endl;
   out << tab[39] << endl << endl;
 }
@@ -52,8 +56,7 @@ bool isPrime(int n) {
 }
 
 void z2() {
-  cout << "Zadanie 2:" << endl;
-  out << "Zadanie 2:" << endl;
+  startTask(2);
   for (int i = 0; i < SIZE; i++) {
     if (isPrime(tab[i])) {
       cout << tab[i] << endl;
@@ -82,20 +85,52 @@ string toBinary(int n) {
 }
 
 void z3() {
-  cout << "Zadanie 3:" << endl;
-  out << "Zadanie 3:" << endl;
+  startTask(3);
   string bin;
   int length = toBinary(tab[39]).length();
+  for (int i = 0; i < SIZE; i++) {
+    bin = toBinary(tab[i]);
+    cout << bin << endl;
+    out << bin << endl;
+    while (bin.length() < length) {
+      bin = "0" + bin;
+    }
+  }
+  cout << endl;
+  ofstream fraktal("import.txt", ios::app);
   for (int i = 0; i < SIZE; i++) {
     bin = toBinary(tab[i]);
     while (bin.length() < length) {
       bin = "0" + bin;
     }
     cout << bin << endl;
-    out << bin << endl;
+    fraktal << bin << endl;
   }
+  fraktal.close();
   cout << endl;
   out << endl;
+}
+
+/* Zadanie 4
+Podaj w zapisie binarnym wyrazy ci¹gu Fibonacciego z zakresu od F1 do F40, które w tym
+zapisie maj¹ dok³adnie 6 jedynek. 
+*/
+
+void z4() {
+  startTask(4);
+  string bin;
+  int counter;
+  for (int i = 0; i < SIZE; i++) {
+    bin = toBinary(tab[i]);
+    counter = 0;
+    for (int j = 0; j < bin.length(); j++) {
+      if (bin[j] == '1') counter++;
+    }
+    if (counter == 6) {
+      cout << bin << endl;
+      out << bin << endl;
+    }
+  }
 }
 
 int main() {
@@ -108,6 +143,7 @@ int main() {
   z1();
   z2();
   z3();
+  z4();
   
   out.close();
 }
