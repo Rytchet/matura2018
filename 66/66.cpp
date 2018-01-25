@@ -36,14 +36,20 @@ Przyk³ad
 18587 21739 404062793
 
 66.3:
+58140 58141 341
+343 58824 58825
 681 231880 231881
 683 233244 233245
-
 1021 521220 521221
 1023 523264 523265
-
+926160 1361 926161
+928885 1363 928884
 1701 1446700 1446701
 1703 1450104 1450105
+
+66.4:
+604 wierszy
+Najdluzszy ciag: 11
 */
 
 const int SIZE = 1000;
@@ -57,7 +63,7 @@ Wypisz wszystkie trójki liczb z pliku trojki.txt, w których suma cyfr dwóch pier
 liczb jest równa ostatniej (trzeciej) liczbie. 
 */
 
-sumOfDigits(int n) {
+int sumOfDigits(int n) {
   int sum = 0;
   while (n > 0) {
     sum += n % 10;
@@ -110,12 +116,9 @@ w tych wierszach s¹ d³ugoœciami boków trójk¹tów prostok¹tnych.
 */
 
 bool isRightTriangle(int a, int b, int c) {
-  if ((a * a) + (b * b) == (c * c) || 
-      (a * a) + (c * c) == (b * b) ||
-      (c * c) + (b * b) == (a * a)) {
-    return true;
-  }
-  return false;
+  return ((a * a) + (b * b) == (c * c) || 
+          (a * a) + (c * c) == (b * b) || 
+          (c * c) + (b * b) == (a * a));
 }
 
 void z3() {
@@ -137,8 +140,39 @@ void z3() {
   cout << endl;
 }
 
+/*
+Podaj, ile jest w pliku trojki.txt wierszy, w których znajduj¹ siê liczby reprezentuj¹ce
+d³ugoœci boków trójk¹ta. Ci¹g wierszy nazywamy trójk¹tnym, jeœli liczby w ka¿dym wierszu
+reprezentuj¹ d³ugoœci boków trójk¹ta. Podaj d³ugoœæ najd³u¿szego ci¹gu trójk¹tnego w pliku. 
+*/
+
+bool isTriangle(int a, int b, int c) {
+  return (a + b > c && a + c > b && b + c > a);
+}
+
+void z4() {
+  cout << "Zadanie 4:" << endl;
+  ifstream in("trojki.txt");
+  int counter = 0, maxChain = 0, chain = 0;
+  int a, b, c;
+  for (int i = 0; i < SIZE; i++) {
+    in >> a >> b >> c;
+    if (isTriangle(a, b, c)) {
+      counter++;
+      chain++;
+    }
+    else {
+      if (chain > maxChain) maxChain = chain;
+      chain = 0;
+    }
+  }
+  cout << counter << " wierszy" << endl;
+  cout << "Najdluzszy ciag: " << maxChain << endl;
+}
+
 int main() {
   z1();
   z2();
   z3();
+  z4();
 }
