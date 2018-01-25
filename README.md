@@ -1,13 +1,20 @@
 # matura2018
 Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
+*Practice for 2018 Matura exam*
+
 ### Linki do zadań:
 
 * [Arkusze CKE](https://cke.gov.pl/egzamin-maturalny/egzamin-w-nowej-formule/arkusze/)
 * [Zbiór zadań CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Informatyka.pdf)
 * [Informator CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2015/Informatyka.pdf)
 
-### Przydatne algorytmy:
+### Ściągawka:
+
+- Zapisanie na koniec pliku
+```c++
+ofstream out("wynik.txt", ios::app);
+```
 
 - Algorytm Euklidesa (nwd)
 ```c++
