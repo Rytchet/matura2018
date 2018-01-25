@@ -84,7 +84,7 @@ void z1() {
   cout << endl;
 }
 
-/*
+/* Zadanie 2
 Wypisz wszystkie wiersze z pliku trojki.txt zawieraj¹ce takie trzy liczby a, b, c, w któ-
 rych a i b s¹ liczbami pierwszymi oraz c = a · b. 
 */
@@ -110,7 +110,7 @@ void z2() {
   cout << endl;
 }
 
-/*
+/* Zadanie 3
 Wypisz z pliku trojki.txt wszystkie pary s¹siaduj¹cych ze sob¹ wierszy, takie ¿e liczby
 w tych wierszach s¹ d³ugoœciami boków trójk¹tów prostok¹tnych. 
 */
@@ -140,7 +140,7 @@ void z3() {
   cout << endl;
 }
 
-/*
+/* Zadanie 4  
 Podaj, ile jest w pliku trojki.txt wierszy, w których znajduj¹ siê liczby reprezentuj¹ce
 d³ugoœci boków trójk¹ta. Ci¹g wierszy nazywamy trójk¹tnym, jeœli liczby w ka¿dym wierszu
 reprezentuj¹ d³ugoœci boków trójk¹ta. Podaj d³ugoœæ najd³u¿szego ci¹gu trójk¹tnego w pliku. 
