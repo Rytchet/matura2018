@@ -1,5 +1,5 @@
 # matura2018
-*Practice for 2018 Matura exam*
+*Practice for the 2018 Matura exam*
 
 Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
