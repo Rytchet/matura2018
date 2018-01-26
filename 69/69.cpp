@@ -30,10 +30,11 @@ pliku zawiera genotyp jednego osobnika o d³ugoœci nie wiêkszej ni¿ 500 znaków.
 */
 
 const int SIZE = 1000;
+const int MAXLEN = 500;
 string tab[SIZE];
 
 /* Wyniki
-
+69.1: 207
 */
 
 /* Zadanie 1
@@ -41,32 +42,25 @@ Podaj liczbê wszystkich gatunków, których genotypy zapisane s¹ w pliku dane_gen.
 Podaj najwiêksz¹ liczbê osobników reprezentuj¹cych ten sam gatunek. 
 */
 
-// Wychodzi speciesCounter 208, powinno byæ 207
 void z1() {
   cout << "Zadanie 1:" << endl;
-  int maxLen = 0;
-  for (int i = 0; i < SIZE; i++) if (tab[i].length() > maxLen) {
-    maxLen = tab[i].length();
-  }
-  int counter[maxLen + 1];
-  for (int i = 0; i <= maxLen; i++) counter[i] = 0;
-  
+
+  int counter[MAXLEN + 1];
+  for (int i = 0; i <= MAXLEN; i++) counter[i] = 0;
   for (int i = 0; i < SIZE; i++) counter[tab[i].length()]++;
-  int maxValue = 0;
-  for (int i = 0; i <= maxLen; i++) {
-    if (counter[i] > maxValue) maxValue = counter[i];
-  }
   
+  int maxValue = 0;
   int speciesCounter = 0;
-  for (int i = 0; i <= maxLen; i++) {
-    if (counter[i] > 0) {
-      speciesCounter++;
-    }
+  for (int i = 0; i <= MAXLEN; i++) {
+    if (counter[i] > maxValue) maxValue = counter[i];
+    if (counter[i] > 0) speciesCounter++;
   }
   
   cout << "Liczba gatunkow: " << speciesCounter << endl;
   cout << "Najwieksza liczba osobnikow: " << maxValue << endl << endl;
 }
+
+
 
 int main() {
   ifstream in("dane_geny.txt");
