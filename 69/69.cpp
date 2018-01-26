@@ -35,7 +35,8 @@ string tab[SIZE];
 
 /* Wyniki
 69.1: 207
-69.2: 8;
+69.2: 8
+69.3: 11 189
 */
 
 /* Zadanie 1
@@ -86,7 +87,8 @@ bool hasBadGene(string s) {
       flag = true;
     }
     if (flag) gene += s[i];
-    if (s[i] == 'B' && s[i - 1] == 'B' && flag) {
+    if (s[i] == 'B' && s[i + 1] == 'B' && flag) {
+      gene += 'B';
       flag = false;
       if (hasBadElement(gene)) return true;
       gene = "";
@@ -104,6 +106,40 @@ void z2() {
   cout << counter << endl << endl;
 }
 
+/*
+Wyznacz i podaj najwiêksz¹ liczbê genów wystêpuj¹cych u jednego osobnika. Podaj te¿ najwiêksz¹
+d³ugoœæ genu zapisanego w ca³ym pliku. 
+*/
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  string s, gene;
+  bool flag;
+  int geneCounter, maxGeneCounter = 0;
+  int maxGeneLength = 0;
+  for (int i = 0; i < SIZE; i++) {
+    s = tab[i];
+    gene = "";
+    geneCounter = 0;
+    flag = false;
+    for (int j = 0; j < s.length() - 1; j++) {
+      if (s[j] == 'A' && s[j + 1] == 'A') {
+        flag = true;
+      }
+      if (flag) gene += s[j];
+      if (s[j] == 'B' && s[j + 1] == 'B' && flag) {
+        gene += 'B';
+        flag = false;
+        geneCounter++;
+        if (gene.length() > maxGeneLength) maxGeneLength = gene.length();
+        gene = "";
+      }
+    }
+    if (geneCounter > maxGeneCounter) maxGeneCounter = geneCounter;
+  }
+  cout << maxGeneCounter << " " << maxGeneLength << endl << endl;
+}
+
 int main() {
   ifstream in("dane_geny.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
@@ -111,4 +147,5 @@ int main() {
   
   z1();
   z2();
+  z3();
 }
