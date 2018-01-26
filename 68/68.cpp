@@ -11,7 +11,8 @@ napisów jest zapisana w osobnym wierszu, a napisy oddzielone s¹ pojedynczym znak
 */
 
 /* Wyniki
-
+68.1: 9
+68.2: 93
 */
 
 const int SIZE = 1000;
