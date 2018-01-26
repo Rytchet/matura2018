@@ -37,6 +37,7 @@ string tab[SIZE];
 69.1: 207
 69.2: 8
 69.3: 11 189
+69.4: 249 187
 */
 
 /* Zadanie 1
@@ -62,7 +63,7 @@ void z1() {
   cout << "Najwieksza liczba osobnikow: " << maxValue << endl << endl;
 }
 
-/*
+/* Zadanie 2
 Wystêpowanie w jakimkolwiek genie ci¹gu BCDDC oznacza mutacjê powoduj¹c¹ ma³¹ odpornoœæ
 osobnika na zmêczenie. Podaj, ile osobników spoœród tych, których genotypy zapisane
 s¹ w pliku, ma tê mutacje. 
@@ -106,7 +107,7 @@ void z2() {
   cout << counter << endl << endl;
 }
 
-/*
+/* Zadanie 3
 Wyznacz i podaj najwiêksz¹ liczbê genów wystêpuj¹cych u jednego osobnika. Podaj te¿ najwiêksz¹
 d³ugoœæ genu zapisanego w ca³ym pliku. 
 */
@@ -140,6 +141,62 @@ void z3() {
   cout << maxGeneCounter << " " << maxGeneLength << endl << endl;
 }
 
+/* Zadanie 4
+Genotyp odczytywany z materia³u biologicznego mo¿e byæ odkodowany w kierunku od strony
+lewej do prawej lub odwrotnie: od strony prawej do lewej. Genotyp nazywaæ bêdziemy
+odpornym, jeœli czytany od strony lewej do prawej oraz od strony prawej do lewej ma dok³adnie
+tak¹ sam¹ czêœæ koduj¹c¹. Natomiast genotyp silnie odporny to taki, który czytany od
+strony lewej do prawej oraz od strony prawej do lewej daje dok³adnie ten sam napis. (Inaczej
+mówi¹c, genotyp jest silnie odporny, gdy jest palindromem). 
+Wyznacz liczbê genotypów odpornych oraz liczbê genotypów silnie odpornych. 
+*/
+
+bool isPalindrome(string s) {
+  for (int i = 0; i < s.length(); i++) {
+    if (s[i] != s[s.length() - i - 1]) return false;
+  }
+  return true;
+}
+
+string allGenes(string s) {
+  string genes = "";
+  bool flag = false;
+  string gene = "";
+  for (int i = 0; i < s.length() - 1; i++) {
+    if (s[i] == 'A' && s[i + 1] == 'A') {
+      flag = true;
+    }
+    if (flag) gene += s[i];
+    if (s[i] == 'B' && s[i + 1] == 'B' && flag) {
+      gene += 'B';
+      flag = false;
+      genes += gene;
+      gene = "";
+    }
+  }
+  return genes;
+}
+
+string reverse(string s) {
+  string result = "";
+  for (int i = 0; i < s.length(); i++) {
+    result = s[i] + result;
+  }
+  return result;
+}
+
+void z4() {
+  cout << "Zadanie 4:" << endl;
+  int resistantCounter = 0, strongResistantCounter = 0;
+  string s;
+  for (int i = 0; i < SIZE; i++) {
+    s = tab[i];
+    if (isPalindrome(s)) strongResistantCounter++;
+    if (allGenes(s) == allGenes(reverse(s))) resistantCounter++;
+  }
+  cout << resistantCounter << " " << strongResistantCounter << endl << endl;
+}
+
 int main() {
   ifstream in("dane_geny.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
@@ -148,4 +205,5 @@ int main() {
   z1();
   z2();
   z3();
+  z4();
 }
