@@ -29,18 +29,46 @@ bool isJednolity(string s) {
   return true;
 }
 
+/* Zadanie 2
+Podaj liczbê wierszy, które zawieraj¹ napisy bêd¹ce wzajemnie swoimi anagramami. 
+*/
 
+string sort(string s) {
+  char temp;
+  for (int i = 0; i < s.length() - 1; i++) {
+    for (int j = 0; j < s.length() - 1; j++) {
+      if (s[j] > s[j + 1]) {
+        temp = s[j];
+        s[j] = s[j + 1];
+        s[j + 1] = temp;
+      }
+    }
+  }
+  return s;
+}
+
+bool areAnagrams(string a, string b) {
+  if (a.length() != b.length()) return false;
+  a = sort(a);
+  b = sort(b);
+  return a == b;
+}
 
 int main() {
   ifstream in("dane_napisy.txt");
   string a, b;
   int jednolityCounter = 0;
+  int anagramCounter = 0;
   for (int i = 0; i < SIZE; i++) {
     in >> a >> b;
     if (isJednolity(a) && isJednolity(b) && a.length() == b.length())
       jednolityCounter++;
+      
+    if (areAnagrams(a, b)) anagramCounter++;
   }
-  
   cout << "Zadanie 1:" << endl;
   cout << jednolityCounter << endl << endl;
+   
+  cout << "Zadanie 2:" << endl;
+  cout << anagramCounter << endl << endl;
 }
