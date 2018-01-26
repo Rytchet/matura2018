@@ -35,6 +35,7 @@ string tab[SIZE];
 
 /* Wyniki
 69.1: 207
+69.2: 8;
 */
 
 /* Zadanie 1
@@ -60,7 +61,48 @@ void z1() {
   cout << "Najwieksza liczba osobnikow: " << maxValue << endl << endl;
 }
 
+/*
+Wystêpowanie w jakimkolwiek genie ci¹gu BCDDC oznacza mutacjê powoduj¹c¹ ma³¹ odpornoœæ
+osobnika na zmêczenie. Podaj, ile osobników spoœród tych, których genotypy zapisane
+s¹ w pliku, ma tê mutacje. 
+*/
 
+bool hasBadElement(string s) {
+  if (s.length() < 5) return false;
+  for (int i = 0; i <= s.length() - 5; i++) {
+    if (s[i] == 'B' && s[i + 1] == 'C' && s[i + 2] == 'D' && s[i + 3] == 'D' &&
+        s[i + 4] == 'C') {
+      return true;    
+    }
+  }
+  return false;
+}
+
+bool hasBadGene(string s) {
+  string gene = "";
+  bool flag = false;
+  for (int i = 0; i < s.length() - 1; i++) {
+    if (s[i] == 'A' && s[i + 1] == 'A') {
+      flag = true;
+    }
+    if (flag) gene += s[i];
+    if (s[i] == 'B' && s[i - 1] == 'B' && flag) {
+      flag = false;
+      if (hasBadElement(gene)) return true;
+      gene = "";
+    }
+  }
+  return false;
+}
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  int counter = 0;
+  for (int i = 0; i < SIZE; i++) {
+    if (hasBadGene(tab[i])) counter++;
+  }
+  cout << counter << endl << endl;
+}
 
 int main() {
   ifstream in("dane_geny.txt");
@@ -68,4 +110,5 @@ int main() {
   in.close();
   
   z1();
+  z2();
 }
