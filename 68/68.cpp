@@ -13,6 +13,7 @@ napisów jest zapisana w osobnym wierszu, a napisy oddzielone s¹ pojedynczym znak
 /* Wyniki
 68.1: 9
 68.2: 93
+68.3: 17
 */
 
 const int SIZE = 1000;
@@ -55,6 +56,29 @@ bool areAnagrams(string a, string b) {
   return a == b;
 }
 
+/*
+Podaj najwiêksz¹ liczbê k tak¹, ¿e w pliku znajduje siê k napisów, z których ka¿de dwa s¹
+wzajemnie swoimi anagramami. 
+*/
+
+void z3() {
+  cout << "Zadanie 3" << endl;
+  ifstream in("dane_napisy.txt");
+  string tab[SIZE * 2];
+  int maxCounter = 0, counter;
+  for (int i = 0; i < SIZE * 2; i++) in >> tab[i];
+  
+  for (int i = 0; i < SIZE * 2; i++) {
+    counter = 1; // Policz sam siebie
+    for (int j = 0; j < SIZE * 2; j++) {
+      if (i == j) continue;
+      if (areAnagrams(tab[i], tab[j])) counter++;
+    }
+    if (counter > maxCounter) maxCounter = counter;
+  }
+  cout << maxCounter << endl << endl;
+}
+
 int main() {
   ifstream in("dane_napisy.txt");
   string a, b;
@@ -72,4 +96,6 @@ int main() {
    
   cout << "Zadanie 2:" << endl;
   cout << anagramCounter << endl << endl;
+  
+  z3();
 }
