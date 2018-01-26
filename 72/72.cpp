@@ -21,6 +21,11 @@ ifvjhuqvh ifvjhuqvhcupzcpw
 cupzcpw
 aznqxr aznqxryrbgshtceaylwak
 yrbgshtceaylwak
+72.3:
+15
+zccvywdcmjrdokqzcnayixplhkrf sarkqzcnayixplhkrf
+iokvlepqzeyvycfjkliiutmzqawwjxgf dfcfyddwodduznkmivqxnrdliiutmzqawwjxgf
+psmwjyystgwchofokzvmkmgusfakroambngky mabgusfakroambngky
 */
 
 const int SIZE = 200;
@@ -81,7 +86,42 @@ void z2() {
   cout << endl;
 }
 
+/* Zadanie 3
+Niektóre z podanych par napisów maj¹ identyczne zakoñczenia (na przyk³ad komputer i krater).
+ZnajdŸ i wypisz najwiêksz¹ mo¿liw¹ d³ugoœæ takiego zakoñczenia, a tak¿e wszystkie
+pary napisów w wierszach, które osi¹gaj¹ tê maksymaln¹ d³ugoœæ. 
+*/
+
+int commonEndingLen(string a, string b) {
+  int counter = 0;
+  for (int i = 1; i < a.length() && i < b.length(); i++) {
+    if (a[a.length() - i] == b[b.length() - i]) counter++;
+    else return counter;
+  }
+  return counter;
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  ifstream in("napisy.txt");
+  string a, b;
+  int maxLen = 0;
+  for (int i = 0; i < SIZE; i++) {
+    in >> a >> b;
+    if (commonEndingLen(a, b) > maxLen) maxLen = commonEndingLen(a, b);
+  }
+  in.close();
+  cout << maxLen << endl;
+  in.open("napisy.txt");
+  for (int i = 0; i < SIZE; i++) {
+    in >> a >> b;
+    if (commonEndingLen(a, b) == maxLen) cout << a << " " << b << endl;
+  }
+  cout << endl;
+}
+
 int main() {
   z1();
   z2();
+  z3();
 }
