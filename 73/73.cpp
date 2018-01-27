@@ -1,5 +1,6 @@
-#include <iostream>
+#include <iostream> // std::fixed
 #include <fstream>
+#include <iomanip> // setprecision()
 using namespace std;
 
 /* Treœæ
@@ -36,10 +37,42 @@ void z1() {
   cout << counter << endl << endl;
 }
 
+/* Zadanie 2
+Sporz¹dŸ statystykê czêstotliwoœci wystêpowania liter w tekœcie: dla ka¿dej litery podaj liczbê
+jej wyst¹pieñ we wszystkich s³owach tekstu oraz jej procentowy udzia³ wœród wyst¹pieñ
+wszystkich liter w tekœcie(do statystyki nie wliczaj spacji). OdpowiedŸ zapisz w nastêpuj¹cej
+postaci:
+A: 632 (7.56%) // 'A' = (char) 65
+B: 196 (2.34%)
+...
+Wartoœci procentowe podaj w zaokr¹gleniu do dwóch miejsc po przecinku. 
+*/
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  int counter[26];
+  float allCounter = 0;
+  for (int i = 0; i < 26; i++) counter[i] = 0;
+  for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < tab[i].length(); j++) {
+      counter[tab[i][j] - 65]++;
+      allCounter++;
+    }
+  }
+
+  for (int i = 0; i < 26; i++) {
+    cout << (char) (i + 65) << ": " << counter[i] << " (";
+    cout << fixed << setprecision(2) << counter[i] / allCounter * 100 << "%)";
+    cout << endl;
+  }
+  cout << endl;
+}
+
 int main() {
   ifstream in("tekst.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
   in.close();
   
   z1();
+  z2();
 }
