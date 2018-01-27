@@ -17,6 +17,15 @@ Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 ofstream out("wynik.txt", ios::app);
 ```
 
+- Ustawienie dokładności wyświetlania
+```c++
+#include <iomanip> // setprecision()
+cout << setprecision(3) << 0.01234;
+// Wynik: 0.0213
+cout << fixed << setprecision(3) << 0.01234;
+// Wynik: 0.012
+```
+
 - Algorytm Euklidesa (nwd)
 ```c++
 int nwd(int x, int y) {
