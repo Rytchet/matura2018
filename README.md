@@ -22,7 +22,7 @@ floor(x); // floor(3.5) == 3
 abs(x); // abs(-5) == 5
 
 #include <algorithm>
-sort(first, last); // sort(tab, tab + length)
+sort(first, last); // sort(tab, tab + length) / sort(string.begin(), string.end())
 ```
 
 - Zapisanie na koniec pliku
