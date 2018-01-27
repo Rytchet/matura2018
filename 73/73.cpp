@@ -68,6 +68,55 @@ void z2() {
   cout << endl;
 }
 
+/* Zadanie 3
+Wœród s³ów w tekœcie policz d³ugoœæ najd³u¿szego pods³owa (fragmentu z³o¿onego z kolejnych
+liter) z³o¿onego z samych spó³g³osek. Pamiêtaj, ¿e samog³oski to: A, E, I, O, U oraz Y,
+zaœ pozosta³e litery s¹ spó³g³oskami.
+Podaj d³ugoœæ najd³u¿szego takiego pods³owa, liczbê s³ów, które zawieraj¹ pods³owo o takiej
+d³ugoœci, oraz pierwsze z nich, które wystêpuje w pliku tekst.txt. 
+*/
+
+bool isVowel(char c) {
+  return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || c == 'Y');
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  int maxLen = 0;
+  string word;
+  for (int i = 0; i < SIZE; i++) {
+    word = "";
+    for (int j = 0; j < tab[i].length(); j++) {
+      if (!isVowel(tab[i][j])) word += tab[i][j];
+      else {
+        if (word.length() > maxLen) maxLen = word.length();
+        word = "";
+      }
+    }
+  }
+  cout << "Najdluzsze slowo: " << maxLen << endl;
+  int wordCount = 0;
+  bool flag = true;
+  for (int i = 0; i < SIZE; i++) {
+    word = "";
+    for (int j = 0; j < tab[i].length(); j++) {
+      if (!isVowel(tab[i][j])) word += tab[i][j];
+      if (isVowel(tab[i][j]) || j == tab[i].length() - 1) {
+        if (word.length() == maxLen) {
+          if (flag) {
+            cout << "Pierwsze: " << tab[i] << endl;
+            flag = false;
+          }
+          wordCount++;
+          break;
+        }
+        word = "";
+      }
+    }
+  }
+  cout << "Liczba slow: " << wordCount << endl << endl;
+}
+
 int main() {
   ifstream in("tekst.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
@@ -75,4 +124,5 @@ int main() {
   
   z1();
   z2();
+  z3();
 }
