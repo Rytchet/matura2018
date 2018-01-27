@@ -15,16 +15,14 @@ Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 - Przydatne bibloioteki
 ```c++
 #include <cmath>
-pow(base, exponent) // pow(2, 3) == 8
-sqrt(x) // sqrt(25) == 5
-ceil(x) // ceil(3.5) == 4
-floor(x) // floor(3.5) == 3
-abs(x) // abs(-5) == 5
+pow(base, exponent); // pow(2, 3) == 8
+sqrt(x); // sqrt(25) == 5
+ceil(x); // ceil(3.5) == 4
+floor(x); // floor(3.5) == 3
+abs(x); // abs(-5) == 5
 
 #include <algorithm>
-sort(first, last) 
-  int tab[] = {3, 2, 1}; 
-  sort(tab, tab + 3); // tab == {1, 2, 3}
+sort(first, last); // sort(tab, tab + length)
 ```
 
 - Zapisanie na koniec pliku
