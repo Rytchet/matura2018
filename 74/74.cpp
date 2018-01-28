@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 
 /* Treœæ
@@ -17,7 +18,17 @@ ikfLDegQXj
 */
 
 /* Wyniki
-
+Zadanie 1:
+16
+Zadanie 2:
+8Y7JGYXXR5
+Ehz018657
+PAsCMQaervw
+cefdi
+cek
+ikfLDegQXj
+jir
+yvm249t83o04
 */
 
 const int SIZE = 200;
@@ -39,7 +50,7 @@ bool isOnlyNumeric(string s) {
 }
 
 void z1() {
-  cout << "Zadanie 2:" << endl;
+  cout << "Zadanie 1:" << endl;
   int counter = 0;
   for (int i = 0; i < SIZE; i++) {
     if (isOnlyNumeric(tab[i])) counter++;
@@ -48,13 +59,31 @@ void z1() {
 }
 
 /* Zadanie 2
-
+Wypisz has³a, które zosta³y u¿yte przez co najmniej dwóch ró¿nych u¿ytkowników, tzn. wystêpuj¹ce
+w dwóch ró¿nych wierszach. Has³a wypisz (bez powtórzeñ) w kolejnoœci leksykograficznej.
 */
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  
+  for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < SIZE; j++) {
+      if (i == j) continue;
+      if (tab[i] == tab[j]) {
+        cout << tab[i] << endl;
+        i++;
+        break;
+      }
+    }
+  }
+}
 
 int main() {
   ifstream in("hasla.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
   in.close();
-  
+  sort(tab, tab + SIZE);
+
   z1();
+  z2();
 }
