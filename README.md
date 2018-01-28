@@ -22,7 +22,25 @@ floor(x); // floor(3.5) == 3
 abs(x); // abs(-5) == 5
 
 #include <algorithm>
-sort(first, last); // sort(tab, tab + length) / sort(string.begin(), string.end())
+sort(first, last);
+```
+
+- Sortowanie
+```c++
+#include <algorithm>
+sort(tab, tab + SIZE);
+sort(string.begin(), string.end());
+
+// Bubble sort
+for (int i = 0; i < SIZE; i++) {
+  for (int j = 0; j < SIZE - i; j++) {
+    if (tab[j] > tab[j + 1]) {
+      temp = tab[j];
+      tab[j] = tab[j + 1];
+      tab[j + 1] = temp;
+    }
+  }
+}
 ```
 
 - Zapisanie na koniec pliku
