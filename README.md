@@ -22,7 +22,10 @@ floor(x); // floor(3.5) == 3
 abs(x); // abs(-5) == 5
 
 #include <algorithm>
-sort(first, last);
+sort(first, last); // Przykład w Sortowanie
+
+#include <iomanip>
+setprecision(n); // Przykład w Ustawienie dokładności wyświetlania
 ```
 
 - Sortowanie
@@ -50,7 +53,7 @@ ofstream out("wynik.txt", ios::app);
 
 - Ustawienie dokładności wyświetlania
 ```c++
-#include <iomanip> // setprecision()
+#include <iomanip>
 cout << setprecision(3) << 0.01234;
 // Wynik: 0.0213
 cout << fixed << setprecision(3) << 0.01234;
