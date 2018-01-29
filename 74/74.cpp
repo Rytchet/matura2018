@@ -76,6 +76,42 @@ void z2() {
       }
     }
   }
+  cout << endl;
+}
+
+/* Zadanie 3
+Podaj liczbê u¿ytkowników posiadaj¹cych has³a, w których wystêpuje fragment z³o¿ony
+z czterech kolejnych znaków ASCII (w dowolnej kolejnoœci).
+Przyk³ady hase³ zawieraj¹cych taki fragment to:
+A5mnpoR89cd (mnpo)
+A5876RRcg (5876)
+As45FGHFEk90nba (GHFE)
+*/
+
+bool has4ascii(string s) {
+  if (s.length() < 4) return false;
+  char t[4];
+  for (int i = 0; i < s.length(); i++) {
+    t[0] = (int) s[i];
+    t[1] = (int) s[i + 1];
+    t[2] = (int) s[i + 2];
+    t[3] = (int) s[i + 3];
+    sort(t, t + 4);
+    if (t[0] + 1 == t[1] && t[1] + 1 == t[2] && t[2] + 1 == t[3]) return true;
+  }
+  return false;
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  int counter = 0;
+  for (int i = 0; i < SIZE; i++) {
+    if (has4ascii(tab[i])) {
+      counter++;
+      // cout << tab[i] << endl;
+    }
+  }
+  cout << counter << endl << endl;
 }
 
 int main() {
@@ -86,4 +122,5 @@ int main() {
 
   z1();
   z2();
+  z3();
 }
