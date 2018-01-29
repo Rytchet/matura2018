@@ -20,6 +20,7 @@ ikfLDegQXj
 /* Wyniki
 Zadanie 1:
 16
+
 Zadanie 2:
 8Y7JGYXXR5
 Ehz018657
@@ -29,6 +30,9 @@ cek
 ikfLDegQXj
 jir
 yvm249t83o04
+
+Zadanie 3:
+39
 */
 
 const int SIZE = 200;
