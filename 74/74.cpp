@@ -33,6 +33,9 @@ yvm249t83o04
 
 Zadanie 3:
 39
+
+Zadanie 4:
+40
 */
 
 const int SIZE = 200;
