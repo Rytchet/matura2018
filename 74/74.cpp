@@ -118,6 +118,32 @@ void z3() {
   cout << counter << endl << endl;
 }
 
+/* Zadanie 4
+Podaj liczbê hase³, które spe³niaj¹ jednoczeœnie poni¿sze warunki:
+• has³o zawiera co najmniej jeden znak numeryczny, tzn. cyfrê od 0 do 9,
+• has³o zawiera co najmniej jedn¹ ma³¹ literê,
+• has³o zawiera co najmniej jedn¹ du¿¹ literê. 
+*/
+
+bool isSafe(string s) {
+  bool numberFlag = false, smallFlag = false, bigFlag = false;
+  for (int i = 0; i < s.length(); i++) {
+    if (s[i] >= '0' && s[i] <= '9') numberFlag = true;
+    if (s[i] >= 'a' && s[i] <= 'z') smallFlag = true;
+    if (s[i] >= 'A' && s[i] <= 'Z') bigFlag = true;
+  }
+  return (numberFlag && smallFlag && bigFlag);
+}
+
+void z4() {
+  cout << "Zadanie 4:" << endl;
+  int counter = 0;
+  for (int i = 0; i < SIZE; i++) {
+    if (isSafe(tab[i])) counter++;
+  }
+  cout << counter << endl << endl;
+}
+
 int main() {
   ifstream in("hasla.txt");
   for (int i = 0; i < SIZE; i++) in >> tab[i];
@@ -127,4 +153,5 @@ int main() {
   z1();
   z2();
   z3();
+  z4();
 }
