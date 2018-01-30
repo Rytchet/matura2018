@@ -31,6 +31,17 @@ did
 desired
 destroyed
 devised
+
+Zadanie 2:
+wkqoocjqwo
+iujolqzzwr
+udwjtljuip
+tlcpgujurjqk
+yplcjdwotwr
+kqrrfwwcjtl
+mupmwjpqpg
+kqrrfwwcjtl
+wotchfqolwr
 */
 
 /* Zadanie 1
@@ -51,6 +62,37 @@ void z1() {
   cout << endl;
 }
 
+/* Zadanie 2
+Zaszyfruj szyfrem afinicznym o kluczu (5, 2) te s³owa z pliku tekst.txt, które sk³adaj¹ siê
+z co najmniej 10 liter. Wypisz je w postaci zaszyfrowanej, po jednym w wierszu. 
+(int) 'a' = 97
+*/
+
+string cipher(string s, int a, int b) {
+  int n;
+  for (int i = 0; i < s.length(); i++) {
+    n = (int) s[i] - 97;
+    n *= a;
+    n += b;
+    while (n > 25) n -= 26;
+    s[i] = (char) n + 97;
+  }
+  return s;
+}
+
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  ifstream in("tekst.txt");
+  string s;
+  while (in >> s) {
+    if (s.length() < 10) continue;
+    cout << cipher(s, 5, 2) << endl;
+  }
+  in.close();
+  cout << endl;
+}
+
 int main() {
   z1();
+  z2();
 }
