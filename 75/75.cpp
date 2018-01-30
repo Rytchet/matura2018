@@ -92,7 +92,49 @@ void z2() {
   cout << endl;
 }
 
+/*
+Plik probka.txt sk³ada siê z 5 wierszy, ka¿dego zawieraj¹cego dwa napisy. Pierwszy
+z nich to pewne s³owo zapisane tekstem jawnym, drugi zaœ to to samo s³owo zaszyfrowane za
+pomoc¹ szyfru afinicznego (ka¿de s³owo innym kluczem).
+Dla ka¿dego z tych s³ów znajdŸ i wypisz klucz szyfruj¹cy oraz klucz deszyfruj¹cy. 
+
+A i B s¹ z przedzia³u [0, 26]
+*/
+
+void z3() {
+  ifstream in("probka.txt");
+  string normal, ciphered;
+  bool flag;
+  while (in >> normal >> ciphered) {
+    flag = false;
+    for (int i = 0; i < 26; i++) {
+      for (int j = 0; j < 26; j++) {
+        if (cipher(normal, i, j) == ciphered) {
+          cout << "Szyfrujacy: (" << i <<  ", " << j << ") ";
+          flag = true;
+          break;
+        }
+      }
+      if (flag) break;
+    }
+    flag = false;
+    for (int i = 0; i < 26; i++) {
+      for (int j = 0; j < 26; j++) {
+        if (cipher(ciphered, i, j) == normal) {
+          cout << "Deszyfrujacy: (" << i <<  ", " << j << ")" << endl;
+          flag = true;
+          break;
+        }
+      }
+      if (flag) break;
+    }
+  }
+  in.close();
+  cout << endl;
+}
+
 int main() {
   z1();
   z2();
+  z3();
 }
