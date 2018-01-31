@@ -9,8 +9,10 @@ Input: "liczby.txt"
 */
 
 /* Wyniki
-60.1: 12, Ostatnie dwie 540, 633
-60.2: 
+Zadanie 1:
+Liczb mniejszych od 1000: 12
+Ostatnie dwie: 540, 633
+Zadanie 2:
 Liczba: 989532
 1 2 3 4 6 9 12 18 36 27487 54974 82461 109948 164922 247383 329844 494766 989532
 Liczba: 131072
@@ -21,14 +23,14 @@ Liczba: 461817
 1 3 9 23 69 97 207 291 529 873 1587 2231 4761 6693 20079 51313 153939 461817
 Liczba: 17298
 1 2 3 6 9 18 31 62 93 186 279 558 961 1922 2883 5766 8649 17298
-
-60.3: 988027
+Zadanie 3:
+Max: 988027
 */
 
 const int SIZE = 200;
 int tab[SIZE];
 
-/*
+/* Zadanie 1
 Policz, ile jest w pliku wejœciowym liczb mniejszych ni¿ 1000, oraz podaj dwie 
 takie liczby, które pojawiaj¹ siê w pliku jako ostatnie (mo¿esz za³o¿yæ, ¿e 
 bêd¹ co najmniej dwie). 
@@ -49,7 +51,7 @@ void z1() {
   cout << "Ostatnie dwie: " << lastNumber << ", " << lastNumber2 << endl;
 }
 
-/*
+/* Zadanie 2
 Wœród liczb wystêpuj¹cych w pliku wejœciowym znajdŸ te, które maj¹ dok³adnie 18 
 dzielników naturalnych (wliczaj¹c w nie 1 i sam¹ liczbê). Dla ka¿dej znalezionej 
 liczby wypisz, oprócz jej wartoœci, listê wszystkich jej dzielników, posortowan¹ 
@@ -79,7 +81,7 @@ void z2() {
 }
 
 
-/*
+/* Zadanie 3
 ZnajdŸ najwiêksz¹ liczbê w pliku, która jest wzglêdnie pierwsza ze wszystkimi 
 pozosta³ymi, czyli tak¹, która z ¿adn¹ z pozosta³ych liczb nie ma wspólnego 
 dzielnika innego ni¿ 1. 

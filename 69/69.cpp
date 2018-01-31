@@ -34,10 +34,15 @@ const int MAXLEN = 500;
 string tab[SIZE];
 
 /* Wyniki
-69.1: 207
-69.2: 8
-69.3: 11 189
-69.4: 249 187
+Zadanie 1:
+Liczba gatunkow: 207
+Najwieksza liczba osobnikow: 20
+Zadanie 2:
+8
+Zadanie 3:
+11 189
+Zadanie 4:
+249 187
 */
 
 /* Zadanie 1

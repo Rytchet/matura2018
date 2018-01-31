@@ -13,23 +13,22 @@ wykorzystanych do uzyskania rozwi¹zania.
 */
 
 /* Wyniki
-61.2:
-Min: 1002
-Max: 777044
-62.2:
+Zadanie 1:
+Najmniejsza: 1002
+Najwieksza: 777044
+Zadanie 2:
 Pierwszy element: 639
-Liczba: 6
-62.3:
+Liczba elementow: 6
+Zadanie 3:
 a) 160
 b) 357
-62.4: (prawdopodobnie b³¹d w odpowiedziach, wyniki s¹ zamienione miejscami)
-411
-625
+Zadanie 4: (prawdopodobnie b³¹d w odpowiedziach, wyniki s¹ zamienione miejscami)
+411 625
 */
 
 const int SIZE = 1000;
 
-/*
+/* Zadanie 1
 Wyszukaj w pliku liczby1.txt dwie liczby, najmniejsz¹ i najwiêksz¹. Podaj wartoœci
 tych liczb w zapisie ósemkowym.
 */
@@ -50,7 +49,7 @@ void z1() {
   cout << "Najwieksza: " << max << endl;
 }
 
-/*
+/* Zadanie 2
 ZnajdŸ najd³u¿szy niemalej¹cy ci¹g liczb wystêpuj¹cych w kolejnych wierszach pliku liczby2.txt.
 Podaj pierwszy element tego ci¹gu oraz liczbê jego elementów. Mo¿esz za³o¿yæ,
 ¿e jest jeden taki ci¹g. 
@@ -85,7 +84,7 @@ void z2() {
   cout << "Liczba elementow: " << maxCounter << endl;
 }
 
-/*
+/* Zadanie 2
 Porównaj wartoœci liczb zapisanych w wierszach o tych samych numerach w plikach liczby1.txt
 i liczby2.txt. Podaj liczbê wierszy, w których:
 a) liczby maj¹ w obu plikach tak¹ sam¹ wartoœæ;
@@ -118,7 +117,7 @@ void z3() {
   cout << "a) " <<  aCounter << endl << "b) " << bCounter << endl;
 }
 
-/*
+/* Zadanie 4
 Podaj, ile razy w zapisie dziesiêtnym wszystkich liczb z pliku liczby2.txt wystêpuje
 cyfra 6 oraz ile razy wyst¹pi³aby ta cyfra, gdyby te same liczby by³y zapisane w systemie
 ósemkowym.

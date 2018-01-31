@@ -11,9 +11,12 @@ napisów jest zapisana w osobnym wierszu, a napisy oddzielone s¹ pojedynczym znak
 */
 
 /* Wyniki
-68.1: 9
-68.2: 93
-68.3: 17
+Zadanie 1:
+9
+Zadanie 2:
+93
+Zadanie 3
+17
 */
 
 const int SIZE = 1000;

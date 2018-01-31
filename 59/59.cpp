@@ -8,18 +8,20 @@ Input: "liczby.txt"
 */
 
 /* Wyniki
-59.1: 114
-59.2: 181
-59.3:
-Min: 11
-Max: 999342708
-1: 381, 2: 344, 3: 171, 4: 76, 5: 22, 6: 4, 7: 0, 8: 2
+Zadanie 1:
+114
+Zadanie 2:
+181
+Zadanie 3:
+Minimum k = 1: 11
+Maksimum k = 1: 999342708
+1: 381; 2: 344; 3: 171; 4: 76; 5: 22; 6: 4; 7: 0; 8: 2;
 */
 
 const int SIZE = 1000;
 int tab[SIZE];
 
-/*
+/* Zadanie 1
 Czynnikiem pierwszym danej liczby naturalnej z³o¿onej jest dowolna liczba 
 pierwsza, która dzieli tê liczbê ca³kowicie. Podaj, ile jest w pliku liczby.txt 
 liczb, w których rozk³adzie na czynniki pierwsze wystêpuj¹ dok³adnie trzy ró¿ne 
@@ -56,7 +58,7 @@ void z1() {
   cout << numberCount << endl;
 }
 
-/*
+/* Zadanie 2
 Podaj, ile jest w pliku liczby.txt liczb, dla których suma danej liczby i 
 liczby odwróconej jest liczb¹ palindromiczn¹, tzn. jej zapis dziesiêtny 
 jest palindromem. 
@@ -82,7 +84,7 @@ void z2() {
   cout << counter << endl;
 }
 
-/*
+/* Zadanie 3
 Niech w(n) oznacza iloczyn cyfr liczby n. Dla danej liczby n tworzymy ci¹g, 
 w którym kolejny element jest iloczynem cyfr wystêpuj¹cych w poprzednim 
 elemencie. Ci¹g koñczy siê, gdy liczba jest liczb¹ jednocyfrow¹. Wówczas moc¹ 

@@ -23,11 +23,10 @@ odstêpami. Dla przyk³adu pierwsze cztery wiersze pliku maj¹ nastêpuj¹c¹ postaæ:
 */
 
 /* Wyniki
-61.1:
-Liczba ci¹gów: 44
-Najwiêksza ró¿nica: 246849
-
-61.2:
+Zadanie 1:
+Liczba ciagow: 44
+Najwieksza roznica: 246849
+Zadanie 2:
 1
 27
 551368
@@ -36,8 +35,7 @@ Najwiêksza ró¿nica: 246849
 1000
 35937
 531441
-
-61.3:
+Zadanie 3:
 6
 36
 421503
@@ -62,7 +60,7 @@ Najwiêksza ró¿nica: 246849
 
 const int SIZE = 100;
 
-/*
+/* Zadanie 1
 Podaj, ile spoœród podanych w pliku ciagi.txt ci¹gów jest ci¹gami 
 arytmetycznymi. ZnajdŸ wœród nich ci¹g o najwiêkszej ró¿nicy i oblicz jego 
 ró¿nicê. Liczbê ci¹gów arytmetycznych oraz najwiêksz¹ ró¿nicê zapisz w pliku 
@@ -98,7 +96,7 @@ void z1() {
   out.close();
 }
 
-/*
+/* Zadanie 2
 Dla ka¿dego podanego ci¹gu znajdŸ — jeœli istnieje — najwiêksz¹ wystêpuj¹c¹ w 
 nim liczbê, która jest pe³nym szeœcianem jakiejœ liczby naturalnej (w pierwszym 
 z przyk³adowych ci¹gów jest to 1 = 1^3 , w drugim — 27 = 3^3).
@@ -136,7 +134,7 @@ void z2() {
   out.close();
 }
 
-/*
+/* Zadanie 3
 Plik bledne.txt ma identyczn¹ strukturê jak ciagi.txt, ale zawiera tylko 20 
 ci¹gów. Wiadomo jednak, ¿e wszystkie wystêpuj¹ce w nim ci¹gi s¹ ci¹gami 
 arytmetycznymi z jednym b³êdem: jeden z wyrazów w ka¿dym ci¹gu zosta³ zast¹piony

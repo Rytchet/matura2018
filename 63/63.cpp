@@ -11,7 +11,7 @@ to zadanie.
 */
 
 /* Wyniki
-63.1:
+Zadanie 1:
 11
 101000101000
 10110001011000
@@ -30,10 +30,9 @@ to zadanie.
 1001110011
 1100111001
 110110110110110110
-
-63.2: 93
-
-63.3:
+Zadanie 2:
+93
+Zadanie 3:
 259 ciagow.
 Max: 248667 Min: 6
 */
@@ -41,7 +40,7 @@ Max: 248667 Min: 6
 const int SIZE = 1000;
 string tab[SIZE];
 
-/*
+/* Zadanie 1
 Ci¹giem dwucyklicznym bêdziemy nazywaæ taki ci¹g zerojedynkowy w o d³ugoœci parzystej,
 który sk³ada siê z dwóch fragmentów w1 oraz w2, w = w1 + w2, takich ¿e w1 = w2. Podaj
 wszystkie ci¹gi dwucykliczne zapisane w pliku ciagi.txt.
@@ -71,7 +70,7 @@ void z1() {
   }
 }
 
-/*
+/* Zadanie 2
 Podaj liczbê ci¹gów z pliku ciagi.txt, w których nie wystêpuj¹ obok siebie dwie jedynki. 
 */
 
@@ -91,7 +90,7 @@ void z2() {
   cout << counter << endl;
 }
 
-/*
+/* Zadanie 3
 Liczb¹ pó³pierwsz¹ nazywamy tak¹ liczbê, która jest iloczynem dwóch liczb pierwszych.
 Podaj, ile ci¹gów z pliku ciagi.txt jest reprezentacj¹ binarn¹ liczb pó³pierwszych. Dodatkowo
 podaj najwiêksz¹ i najmniejsz¹ liczbê pó³pierwsz¹ w zapisie dziesiêtnym. 

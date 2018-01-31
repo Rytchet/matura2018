@@ -15,11 +15,11 @@ Plik dane_obrazki.txt sk³ada siê z opisu 200 czarno-bia³ych obrazków o rozmiarze
 */
 
 /* Wyniki
-64.1:
+Zadanie 1:
 Rewersow: 13
 Najwieksza ilosc czarnych: 381
 
-64.2:
+Zadanie 2:
 Liczba obrazkow rekurencyjnych: 60
 11111111111111111111
 00000000000000000000
@@ -42,14 +42,13 @@ Liczba obrazkow rekurencyjnych: 60
 11111111111111111111
 00000000000000000000
 
-64.3:
+Zadanie 3:
 Liczba poprawnych:171
 Liczba naprawialnych: 14
 Liczba nienaprawialnych: 15
 Najwiecej zlej parzystosci: 7
 
-64.4:
-(index, wiersz, kolumna)
+Zadanie 4: (index, wiersz, kolumna)
 (14, 1, 15)
 (19, 4, 20)
 (26, 21, 13)

@@ -11,10 +11,17 @@ jako u³amek, którego licznikiem jest pierwsza liczba, a mianownikiem — druga lic
 */
 
 /* Wyniki
-65.1: 1, 225
-65.2: 410
-65.3: 128446
-65.4: 578219135
+Zadanie 1:
+Licznik: 1 Mianownik: 225
+
+Zadanie 2:
+410
+
+Zadanie 3:
+128446
+
+Zadanie 4:
+a = 578219135
 */
 
 const int SIZE = 1000;

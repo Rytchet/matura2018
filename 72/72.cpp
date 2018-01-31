@@ -11,17 +11,19 @@ zapisz w pliku wyniki.txt.
 */
 
 /* Wyniki
-72.1:
-70
+Zadanie 1:
 feycznvjtboxfx gthzgbpglrwjqxqlculgwzdhuevrmvssozrwdjcqcb
-72.2:
+70
+
+Zadanie 2:
 kxazlp kxazlpe
 e
 ifvjhuqvh ifvjhuqvhcupzcpw
 cupzcpw
 aznqxr aznqxryrbgshtceaylwak
 yrbgshtceaylwak
-72.3:
+
+Zadanie 3:
 15
 zccvywdcmjrdokqzcnayixplhkrf sarkqzcnayixplhkrf
 iokvlepqzeyvycfjkliiutmzqawwjxgf dfcfyddwodduznkmivqxnrdliiutmzqawwjxgf
