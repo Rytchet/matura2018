@@ -20,24 +20,24 @@ Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 <a name="zadania"></a>
 ## O zadaniach
 
-Zadanie | Trudność
-------- | --------
-58 | ★★★☆☆
-59 | ★★★☆☆
-60 | ★★☆☆☆
-61 | ★★☆☆☆
-62 | ★★★★☆
-63 | ★★★☆☆
-64 | ★★★★★
-65 | ★★★★☆
-66 | ★☆☆☆☆
-67 | ★★★★★
-68 | ★★★☆☆
-69 | ★★★★★
-72 | ★☆☆☆☆
-73 | ★★★★☆
-74 | ★★☆☆☆
-75 | ★★★★☆
+Zadanie | Trudność | Komentarz
+------- | -------- | ---------
+58 | ★★★☆☆ | Zamiana między dwójkowym, czwórkowym i ósemkowym
+59 | ★★★☆☆ | Liczby pierwsze, rozkład na czynniki, palindromy
+60 | ★★☆☆☆ | Dzielniki, liczby względnie pierwsze
+61 | ★★☆☆☆ | Ciągi arytmetyczne, sprawdzanie poprawności
+62 | ★★★★☆ | Zamiana między ósemkowym i dziesiętnym
+63 | ★★★☆☆ | Zamiana między dwójkowym i dziesiętnym, liczby półpierwsze
+64 | ★★★★★ | Bity parzystości, tablice dwuwymiarowe, sprawdzanie poprawności
+65 | ★★★★☆ | Ułamki
+66 | ★☆☆☆☆ | Działania na liczbach
+67 | ★★★★★ | Ciąg Fibonacciego, rysunek fraktala
+68 | ★★★☆☆ | Anagramy, działania na stringach
+69 | ★★★★★ | Działania na stringach (genomy)
+72 | ★☆☆☆☆ | Podstawowe działania na stringach
+73 | ★★★★☆ | Porównywanie słów, liczenie częstotliwości
+74 | ★★☆☆☆ | Działania na stringach (hasła)
+75 | ★★★★☆ | Szyfrowanie
 
 70 i 71 to zadania z matematyki.
 
