@@ -10,27 +10,26 @@ Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 * [Zbiór zadań CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Informatyka.pdf)
 * [Informator CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2015/Informatyka.pdf)
 
-### Trudność zadań
-
 Zadanie | Trudność
 ------------ | -------------
-58 | ★☆☆☆☆
-59 | ★☆☆☆☆
-60 | ★☆☆☆☆
-61 | ★☆☆☆☆
-62 | ★☆☆☆☆
-63 | ★☆☆☆☆
-64 | ★☆☆☆☆
-65 | ★☆☆☆☆
+58 | ★★★☆☆
+59 | ★★★☆☆
+60 | ★★☆☆☆
+61 | ★★☆☆☆
+62 | ★★★★☆
+63 | ★★★☆☆
+64 | ★★★★★
+65 | ★★★★☆
 66 | ★☆☆☆☆
-67 | ★☆☆☆☆
-68 | ★☆☆☆☆
-69 | ★☆☆☆☆
-70 | ★☆☆☆☆
-71 | ★☆☆☆☆
+67 | ★★★★★
+68 | ★★★☆☆
+69 | ★★★★★
 72 | ★☆☆☆☆
-73 | ★☆☆☆☆
+73 | ★★★★☆
+74 | ★★☆☆☆
+75 | ★★★★☆
 
+70 i 71 to zadania z matematyki.
 
 ### Ściągawka:
 
