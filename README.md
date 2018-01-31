@@ -154,7 +154,9 @@ input.close();
 
 - Zapisanie zmiennej do pliku
 ```c++
-// Jeżeli plik nie istnieje zostanie utworzony, przed zapisem cała zawartość pliku będzie usunięta. Zapisanie na koniec pliku w Ściągawce. 
+/* Jeżeli plik nie istnieje to zostanie utworzony. Przed zapisem cała zawartość 
+ * pliku będzie usunięta. O zapisaniu na koniec pliku jest w Ściągawce. 
+ */
 ofstream output("plik.txt"); // ofstream = output file stream
 string wiadomosc = "Michał Tarnecki to super kolega";
 output << wiadomosc;
