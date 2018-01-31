@@ -3,12 +3,15 @@
 
 Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
-
-### Linki do zadań
+<a name="linki"></a>
+## Linki do zadań
 
 * [Arkusze CKE](https://cke.gov.pl/egzamin-maturalny/egzamin-w-nowej-formule/arkusze/)
 * [Zbiór zadań CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Informatyka.pdf)
 * [Informator CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2015/Informatyka.pdf)
+
+<a name="zadania"></a>
+## O zadaniach
 
 Zadanie | Trudność
 ------------ | -------------
@@ -31,7 +34,8 @@ Zadanie | Trudność
 
 70 i 71 to zadania z matematyki.
 
-### Ściągawka:
+<a name="sciagawka"></a>
+## Ściągawka:
 
 - Przydatne bibloioteki
 ```c++
@@ -109,4 +113,43 @@ int binToDec(string bin) {
     n = n * 2 + (bin[i] - '0');
   return n;
 }
+```
+
+## Podstawy
+
+- Przykładowy program wczytujący i wypisujący dane z pliku
+```c++
+#include <iostream> // cout
+#include <fstream> // file stream
+using namespace std;
+
+int main() {
+  const int ROZMIAR = 1000;
+  int tabela[ROZMIAR];
+  ifstream input("plik.txt"); // ifstream = input file stream
+
+  for (int i = 0; i < ROZMIAR; i++) {
+    input >> tabela[i];
+    cout << tabela[i];
+  }
+
+  input.close();
+}
+```
+
+- Wczytanie z pliku do pojedynczej zmiennej
+```c++
+ifstream input("plik.txt");
+int n;
+while (input >> n) cout << n;
+input.close();
+```
+
+- Zapisanie zmiennej do pliku
+```c++
+// Jeżeli plik nie istnieje zostanie utworzony, przed zapisem cała zawartość pliku będzie usunięta. Zapisanie na koniec pliku w Ściągawce. 
+ofstream output("plik.txt"); // ofstream = output file stream
+string wiadomosc = "Michał Tarnecki to super kolega";
+output << wiadomosc;
+output.close();
 ```
