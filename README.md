@@ -3,6 +3,12 @@
 
 Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
+## Spis treści
+* [Linki do zadań](#linki)
+* [O zadaniach](#zadania)
+* [Ściągawka](#sciagawka)
+* [Podstawy](#podstawy)
+
 <a name="linki"></a>
 ## Linki do zadań
 
@@ -115,6 +121,7 @@ int binToDec(string bin) {
 }
 ```
 
+<a name="podstawy"></a>
 ## Podstawy
 
 - Przykładowy program wczytujący i wypisujący dane z pliku
