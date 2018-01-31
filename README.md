@@ -4,11 +4,15 @@
 Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
 
-### Linki do zadań:
+### Linki do zadań
 
 * [Arkusze CKE](https://cke.gov.pl/egzamin-maturalny/egzamin-w-nowej-formule/arkusze/)
 * [Zbiór zadań CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Informatyka.pdf)
 * [Informator CKE](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2015/Informatyka.pdf)
+
+### Trudność zadań
+
+* 65 ★☆☆☆☆
 
 ### Ściągawka:
 
@@ -84,7 +88,7 @@ bool isPrime(int n) {
 ```c++
 int binToDec(string bin) {
   int n = 0;
-  for (int i = 0; i < bin.length(); i++) {
+  for (int i = 0; i < bin.length(); i++)
     n = n * 2 + (bin[i] - '0');
   return n;
 }
