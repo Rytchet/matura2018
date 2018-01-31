@@ -13,7 +13,7 @@ Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 ### Trudność zadań
 
 Zadanie | Trudność
-- | -
+------------ | -------------
 58 | ★☆☆☆☆
 59 | ★☆☆☆☆
 60 | ★☆☆☆☆
