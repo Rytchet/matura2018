@@ -77,6 +77,14 @@ void z1() {
   cout << "b) " << szyfruj(s, key) << endl << endl;
 }
 
+/* Zadanie 2
+W pliku szyfr.txt zapisano dwa wiersze. W pierwszym wierszu znajduje siê tekst zaszyfrowany
+metod¹ Vigenere’a. W drugim wierszu znajduje siê klucz u¿yty do tego szyfrowania.
+Szyfr zawiera wiele s³ów. Jego ³¹czna d³ugoœæ nie przekracza 1024 znaków. Szyfrowaniu
+podlega³y tylko wielkie litery tekstu, zaœ odstêpy i znaki przestankowe pozosta³y bez zmiany. 
+Odszyfruj tekst i umieœæ jego postaæ Ÿród³ow¹ w pliku z odpowiedziami. 
+*/
+
 int main() {
   z1();
 }
