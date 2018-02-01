@@ -31,6 +31,9 @@ ktjwaoSkKoctcoSrasioarlrluewblTnfzoGetiaSkeruDKapi
 
 Zadanie 2:
 cosnyzcahnzdoolynturmoifaraatmkaalgorytmystruktury
+
+Zadanie 3:
+csonozolzhcynadyrutkurtsymtyroglaakytamrofniarutam
 */
 
 /* Zadanie 1
