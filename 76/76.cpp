@@ -21,7 +21,16 @@ Napis „KAAYTRNFOIM” jest zatem szyfrem napisu „INFORMATYKA” z kluczem [3, 2, 5, 
 */
 
 /* Wyniki
+Zadanie 1:
+ramnfrayooyauymtkgsrrnyyzianmaooldlctatsocthurtzuk
+slsWdrnazkryjiAeaseeznktiAnoejrdraikacFwNmKtkeeoyK
+jltDereaaonaLaAiiknBimeurAalaAliKrzrasgDaaaicaoaot
+zawSKndGoOLaozWrorlcaalnnwnpkorocaWcPzwdieazszaesk
+btsdogdbeKoulrSanPotkMenmlaiwasjzMnyryLuywrtmirRBe
+ktjwaoSkKoctcoSrasioarlrluewblTnfzoGetiaSkeruDKapi
 
+Zadanie 2:
+cosnyzcahnzdoolynturmoifaraatmkaalgorytmystruktury
 */
 
 /* Zadanie 1
