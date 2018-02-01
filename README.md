@@ -38,8 +38,8 @@ Zadanie | Trudność | Komentarz
 72 | ★☆☆☆☆ | Podstawowe działania na stringach
 73 | ★★★★☆ | Porównywanie słów, liczenie częstotliwości
 74 | ★★☆☆☆ | Działania na stringach (hasła)
-75 | ★★★★☆ | Szyfrowanie
-76 | ★★★★☆ | Szyfrowanie
+75 | ★★★★☆ | Szyfrowanie afiniczne
+76 | ★★★★☆ | Szyfrowanie przestawieniowe
 
 70 i 71 to zadania z matematyki.
 
