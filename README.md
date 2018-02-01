@@ -39,7 +39,8 @@ Zadanie | Trudność | Komentarz
 73 | ★★★★☆ | Porównywanie słów, liczenie częstotliwości
 74 | ★★☆☆☆ | Działania na stringach (hasła)
 75 | ★★★★☆ | Szyfrowanie afiniczne
-76 | ★★★★☆ | Szyfrowanie przestawieniowe
+76 | ★★★☆☆ | Szyfrowanie przestawieniowe
+77 | ★★★★★ | Szyfr Vingerere'a
 
 70 i 71 to zadania z matematyki.
 
