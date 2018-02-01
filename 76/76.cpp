@@ -83,10 +83,39 @@ void z2() {
   in >> s;
   int key[15];
   for (int i = 0; i < 15; i++) in >> key[i];
-  cout << szyfruj(s, key, 15) << endl;
+  cout << szyfruj(s, key, 15) << endl << endl;
+}
+
+/* Zadanie 3
+W pliku szyfr3.txt dany jest napis z³o¿ony z 50 liter alfabetu ³aciñskiego. Napis ten powsta³
+po zaszyfrowaniu pewnego napisu A kluczem [6, 2, 4, 1, 5, 3]. 
+Podaj napis A. Wynik zapisz w pliku wyniki_szyfr3.txt. 
+*/
+
+string deszyfruj(string s, int key[], int keyLen) {
+  int keyIndex = (s.length() % keyLen - 1);
+  char temp;
+  for (int i = s.length() - 1; i >= 0; i--) {
+    temp = s[i];
+    s[i] = s[key[keyIndex] - 1];
+    s[key[keyIndex] - 1] = temp;
+    keyIndex--;
+    if (keyIndex == -1) keyIndex = keyLen - 1;
+  }
+  return s;
+}
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  ifstream in("szyfr3.txt");
+  string s;
+  in >> s;
+  int key[] = {6, 2, 4, 1, 5, 3};
+  cout << deszyfruj(s, key, 6) << endl;
 }
 
 int main() {
   z1();
   z2();
+  z3();
 }
