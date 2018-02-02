@@ -90,7 +90,7 @@ ofstream out("wynik.txt", ios::app);
 ```c++
 #include <iomanip>
 cout << setprecision(3) << 0.01234;
-// Wynik: 0.0213
+// Wynik: 0.0123
 cout << fixed << setprecision(3) << 0.01234;
 // Wynik: 0.012
 ```
