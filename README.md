@@ -47,7 +47,7 @@ Zadanie | Trudność | Komentarz
 <a name="sciagawka"></a>
 ## Ściągawka:
 
-- Przydatne bibloioteki
+- Przydatne biblioteki
 ```c++
 #include <cmath>
 pow(base, exponent); // pow(2, 3) == 8
