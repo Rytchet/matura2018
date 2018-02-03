@@ -85,6 +85,27 @@ podlega³y tylko wielkie litery tekstu, zaœ odstêpy i znaki przestankowe pozosta³
 Odszyfruj tekst i umieœæ jego postaæ Ÿród³ow¹ w pliku z odpowiedziami. 
 */
 
+void z2() {
+  cout << "Zadanie 2:" << endl;
+  string key = "ZLODZIEJCZASU"; // wyciête z pliku
+  string s = "";
+  string temp;
+  ifstream in("szyfr.txt");
+  while (in >> temp) s += temp + " ";
+  
+  int keyIndex = 0;
+  for (int i = 0; i < s.length(); i++) {
+    if (s[i] == ' ' || s[i] == ',' || s[i] == '.') continue;
+    s[i] -= key[keyIndex];
+    s[i] += 65;
+    if (s[i] < 'A') s[i] += 26;
+    keyIndex++;
+    if (keyIndex == key.length()) keyIndex = 0;
+  }
+  cout << s << endl;
+}
+
 int main() {
   z1();
+  z2();
 }
