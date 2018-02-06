@@ -41,6 +41,10 @@ POWIEKI. JEDYNYM WLASCIWYM STANEM UMYSLU JEST ZASKOCZENIE. JEDYNYM WLASCIWYM
 STANEM SERCA JEST RADOSC. NIEBO KTORE WIDZICIE NIE BYLO JESZCZE NIGDY PRZEZ WAS 
 OGLADANE. MOMENT ABSOLUTNEJ PERFEKCJI JEST TERAZ. CIESZCIE SIE NIM. 
 TERRY PRATCHETT.
+
+Zadanie 3:
+a) A: 8 B: 19 C: 13 D: 21 E: 19 F: 4 G: 8 H: 21 I: 12 J: 13 K: 6 L: 14 M: 16 
+N: 15 O: 10 P: 10 Q: 8 R: 11 S: 12 T: 17 U: 13 V: 11 W: 21 X: 12 Y: 10 Z: 7
 */
 
 /* Zadanie 1
@@ -115,10 +119,39 @@ void z2() {
     keyIndex++;
     if (keyIndex == key.length()) keyIndex = 0;
   }
-  cout << s << endl;
+  cout << s << endl << endl;
+}
+
+/* Zadanie 3
+a) Podaj liczby wyst¹pieñ poszczególnych liter A, B, ..., Z w treœci szyfru zawartego
+  w pierwszym wierszu pliku szyfr.txt. 
+*/
+
+void z3() {
+  cout << "Zadanie 3:" << endl;
+  // a)
+  int tab[26];
+  for (int i = 0; i < 26; i++) {
+    tab[i] = 0;
+  }
+  ifstream in("szyfr.txt");
+  string s;
+  while (in >> s) {
+    for (int i = 0; i < s.length(); i++) {
+      if (s[i] >= 'A' && s[i] <= 'Z') {
+        tab[s[i] - 65]++;
+      }
+    }
+  }
+  for (int i = 0; i < 26; i++) {
+    cout << (char) (i + 65) << ": " << tab[i] << " ";
+  }
+  
+  
 }
 
 int main() {
   z1();
   z2();
+  z3();
 }
