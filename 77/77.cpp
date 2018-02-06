@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 /* Treœæ
@@ -45,6 +46,10 @@ TERRY PRATCHETT.
 Zadanie 3:
 a) A: 8 B: 19 C: 13 D: 21 E: 19 F: 4 G: 8 H: 21 I: 12 J: 13 K: 6 L: 14 M: 16 
 N: 15 O: 10 P: 10 Q: 8 R: 11 S: 12 T: 17 U: 13 V: 11 W: 21 X: 12 Y: 10 Z: 7
+
+b) 
+Wartosc szacunkowa: 12.52
+Wartosc prawdziwa: 13
 */
 
 /* Zadanie 1
@@ -125,29 +130,58 @@ void z2() {
 /* Zadanie 3
 a) Podaj liczby wyst¹pieñ poszczególnych liter A, B, ..., Z w treœci szyfru zawartego
   w pierwszym wierszu pliku szyfr.txt. 
+  
+b) Chc¹c z³amaæ szyfr Vigenere, nie znaj¹c klucza, w pierwszym kroku nale¿y oszacowaæ
+d³ugoœæ klucza (rozumian¹ jako liczba znaków). Istnieje przybli¿ony wzór na szacunkow¹
+d³ugoœæ klucza d danego szyfru Vigenere’a dla tekstu nad alfabetem 26-literowym. Oszacowanie
+jest tym lepsze, im d³u¿szy jest szyfr. 
+  d = 0,0285/(Ko - 0,0385)
+gdzie Ko to indeks koincydencji znaków obliczany nastêpuj¹co: 
+  Ko = (lA * (lA - 1) + lB * (lB - 1) + ... + lZ * (lZ - 1)) / (n * (n - 1))
+n - ³¹czna liczba wyst¹pieñ wszystkich liter w tekœcie szyfru 
+    (nie liczymy odstêpów i znaków przestankowych)
+lA, lB, ..., lZ - liczby wyst¹pieñ poszczególnych liter A, B, …, Z w tekœcie szyfru. 
+Wykorzystuj¹c powy¿sze wzory, wyznacz szacunkow¹ d³ugoœæ klucza dla szyfru danego
+w pierwszym wierszu pliku szyfr.txt i porównaj z dok³adn¹ d³ugoœci¹ klucza umieszczonego
+w drugim wierszu tego pliku. Wypisz obie wartoœci, wartoœæ szacunkow¹ zaokr¹-
+glij do 2 cyfr po przecinku
+
+Prawdziwy szyfr - ZLODZIEJCZASU (wyciête z pliku, 13 liter)
 */
 
 void z3() {
   cout << "Zadanie 3:" << endl;
   // a)
+  cout << "a)" << endl;
   int tab[26];
   for (int i = 0; i < 26; i++) {
     tab[i] = 0;
   }
   ifstream in("szyfr.txt");
   string s;
+  float n = 0.0; // £¹czna liczba wyst¹pieñ
   while (in >> s) {
     for (int i = 0; i < s.length(); i++) {
       if (s[i] >= 'A' && s[i] <= 'Z') {
+        n++;
         tab[s[i] - 65]++;
       }
     }
   }
   for (int i = 0; i < 26; i++) {
-    cout << (char) (i + 65) << ": " << tab[i] << " ";
+    cout << (char) (i + 65) << ": " << tab[i] << endl;
   }
-  
-  
+  cout << endl;
+  // b)
+  cout << "b)" << endl;
+  float Ko = 0.0;
+  for (int i = 0; i < 26; i++) {
+    Ko += tab[i] * (tab[i] - 1);
+  }
+  Ko /= n * (n - 1);
+  float d = 0.0285 / (Ko - 0.0385);
+  cout << "Wartosc szacunkowa: " << fixed << setprecision(2) << d << endl;
+  cout << "Wartosc prawdziwa: " << 13 << endl;
 }
 
 int main() {
