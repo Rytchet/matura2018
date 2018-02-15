@@ -2,3 +2,5 @@
 *.pdf
 dane/
 rozwiazania/
+.idea/
+cmake-build-debug/
