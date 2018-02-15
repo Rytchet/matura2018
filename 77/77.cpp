@@ -172,7 +172,7 @@ void z3() {
     cout << (char) (i + 65) << ": " << tab[i] << endl;
   }
   cout << endl;
-  // b)
+
   cout << "b)" << endl;
   float Ko = 0.0;
   for (int i = 0; i < 26; i++) {
