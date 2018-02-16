@@ -41,6 +41,7 @@ Zadanie | Trudność | Komentarz
 75 | ★★★★☆ | Szyfrowanie afiniczne
 76 | ★★★☆☆ | Szyfrowanie przestawieniowe
 77 | ★★★★★ | Szyfr Vingerere'a
+78 | ★★★★★★ | Dość.
 
 70 i 71 to zadania z matematyki.
 
