@@ -35,15 +35,17 @@ Zadanie | Trudność | Komentarz
 67 | ★★★★★ | Ciąg Fibonacciego, rysunek fraktala
 68 | ★★★☆☆ | Anagramy, działania na stringach
 69 | ★★★★★ | Działania na stringach (genomy)
-72 | ★☆☆☆☆ | Podstawowe działania na stringach
+70 | ★★★★★ | Działania na stringach (genomy)
+71 | ★★★★★ | *Zadanie z matematyki*
+72 | ★☆☆☆☆ | *Zadanie z matematyki*
 73 | ★★★★☆ | Porównywanie słów, liczenie częstotliwości
 74 | ★★☆☆☆ | Działania na stringach (hasła)
 75 | ★★★★☆ | Szyfrowanie afiniczne
 76 | ★★★☆☆ | Szyfrowanie przestawieniowe
 77 | ★★★★★ | Szyfr Vingerere'a
-78 | ★★★★★ | Dość.
+78 | ★★★★★ | *Okropne zadanie z szyfrowaniem*
 
-70 i 71 to zadania z matematyki.
+*Zadania w kursywie nie są rozwiązane*
 
 <a name="sciagawka"></a>
 ## Ściągawka:
