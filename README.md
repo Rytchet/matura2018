@@ -45,7 +45,7 @@ Zadanie | Trudność | Komentarz
 77 | ★★★★★ | Szyfr Vingerere'a
 78 | ★★★★★ | *Okropne zadanie z szyfrowaniem*
 
-*Zadania w kursywie nie są rozwiązane*
+Zadania w *kursywie* nie są rozwiązane
 
 <a name="sciagawka"></a>
 ## Ściągawka:
