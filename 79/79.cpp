@@ -66,7 +66,32 @@ void z1() {
   cout << endl;
 }
 
+/* Zadanie 2
+Powiemy, ¿e dwa okrêgi tworz¹ lustrzan¹ parê, jeœli jeden z nich powstaje przez odbicie drugiego
+wzglêdem jednej z osi Ox lub Oy. Podaj liczbê lustrzanych par spoœród wszystkich
+okrêgów zapisanych w pliku okregi.txt. 
+*/
 
+bool jestLustrzany(double x1, double y1, double r1, double x2, double y2, double r2) {
+	if (r1 != r2) return false;
+	if (x1 == x2 && y1 == y2) return false;
+	if (abs(x1) == abs(x2) && y1 == y2) return true;
+	if (abs(y1) == abs(y2) && x1 == x2) return true;
+	return false;
+}
+
+void z2() {
+	cout << "Zadanie 2:" << endl;
+	int counter = 0;
+	for (int i = 0; i < SIZE - 1; i++) {
+		for (int j = i + 1; j < SIZE; j++) {
+			if (jestLustrzany(tab[i][0], tab[i][1], tab[i][2], tab[j][0], tab[j][1], tab[j][2])) {
+				counter++;
+			}
+		}
+	}
+	cout << counter << endl << endl;
+}
 
 int main() {
   ifstream in("okregi.txt");
@@ -80,4 +105,5 @@ int main() {
   in.close();
   
   z1();
+  z2();
 }
