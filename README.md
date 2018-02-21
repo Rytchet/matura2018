@@ -31,7 +31,7 @@ Zadanie | Trudność | Komentarz
 63 | ★★★☆☆ | Zamiana między dwójkowym i dziesiętnym, liczby półpierwsze
 64 | ★★★★★ | Bity parzystości, tablice dwuwymiarowe, sprawdzanie poprawności
 65 | ★★★★☆ | Ułamki
-66 | ★☆☆☆☆ | Działania na liczbach
+66 | ★☆☆☆☆ | Podstawowe działania na liczbach
 67 | ★★★★★ | Ciąg Fibonacciego, rysunek fraktala
 68 | ★★★☆☆ | Anagramy, działania na stringach
 69 | ★★★★★ | Działania na stringach (genomy)
@@ -46,6 +46,7 @@ Zadanie | Trudność | Komentarz
 78 | ★★★★★ | *Okropne zadanie z szyfrowaniem*
 79 | ★★☆☆☆ | Okręgi
 80 | ★★★☆☆ | Trójkąty
+81 | ★★★★☆ | Współrzędne
 
 Zadania w *kursywie* nie są rozwiązane
 
