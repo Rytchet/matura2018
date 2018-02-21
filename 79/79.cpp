@@ -72,7 +72,7 @@ wzglêdem jednej z osi Ox lub Oy. Podaj liczbê lustrzanych par spoœród wszystkich
 okrêgów zapisanych w pliku okregi.txt. 
 */
 
-bool jestLustrzany(double x1, double y1, double r1, double x2, double y2, double r2) {
+bool saLustrzane(double x1, double y1, double r1, double x2, double y2, double r2) {
 	if (r1 != r2) return false;
 	if (x1 == x2 && y1 == y2) return false;
 	if (abs(x1) == abs(x2) && y1 == y2) return true;
@@ -85,7 +85,37 @@ void z2() {
 	int counter = 0;
 	for (int i = 0; i < SIZE - 1; i++) {
 		for (int j = i + 1; j < SIZE; j++) {
-			if (jestLustrzany(tab[i][0], tab[i][1], tab[i][2], tab[j][0], tab[j][1], tab[j][2])) {
+			if (saLustrzane(tab[i][0], tab[i][1], tab[i][2], tab[j][0], tab[j][1], tab[j][2])) {
+				counter++;
+			}
+		}
+	}
+	cout << counter << endl << endl;
+}
+
+/* Zadanie 3
+Powiemy, ¿e dwa okrêgi tworz¹ prostopad³¹ parê, jeœli jeden z nich powstaje przez obrót
+drugiego o 90 stopni wzglêdem œrodka uk³adu wspó³rzêdnych.
+Przyk³ad: okrêgi o œrodkach w punktach (3,-5), (5,3) (i o tych samych promieniach) tworz¹
+parê prostopad³¹
+Podaj liczbê prostopad³ych par okrêgów spoœród wszystkich okrêgów zapisanych w pliku
+okregi.txt. 
+*/
+
+bool saProstopadle(double x1, double y1, double r1, double x2, double y2, double r2) {
+	if (r1 != r2) return false;
+	if (x1 == x2 && y1 == y2) return false;
+	if (abs(x1) == abs(y2) && x2 == y1) return true;
+	if (abs(x2) == abs(y1) && x1 == y2) return true;
+	return false;
+}
+
+void z3() {
+	cout << "Zadanie 3:" << endl;
+	int counter = 0;
+	for (int i = 0; i < SIZE - 1; i++) {
+		for (int j = i + 1; j < SIZE; j++) {
+			if (saProstopadle(tab[i][0], tab[i][1], tab[i][2], tab[j][0], tab[j][1], tab[j][2])) {
 				counter++;
 			}
 		}
@@ -106,4 +136,5 @@ int main() {
   
   z1();
   z2();
+  z3();
 }
