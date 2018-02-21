@@ -10,7 +10,11 @@ próbowaæ budowaæ trójk¹ty.
 */
 
 /* Wyniki
-
+Zadanie 1:
+4, 3, 5
+13, 85, 84
+33, 65, 56
+28, 45, 53
 */
 
 const int SIZE = 500;
