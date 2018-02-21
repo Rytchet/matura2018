@@ -17,6 +17,11 @@ III: 166
 IV: 218
 0: 3
 
+Zadanie 2:
+158
+
+Zadanie 3:
+231
 */
 
 const int SIZE = 2000;
