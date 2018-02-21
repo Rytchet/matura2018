@@ -21,6 +21,13 @@ Zadanie 1:
 
 Zadanie 2:
 24
+
+Zadanie 3:
+-30, 23; 75, -62; 25, 48
+Obwod: 316.34
+
+Zadanie 4:
+18
 */
 
 const int SIZE = 100;
@@ -104,6 +111,30 @@ void z3() {
 	cout << "Obwod: " << setprecision(5) << max << endl << endl;
 }
 
+/* Zadanie 4
+Dla ka¿dego wiersza z pliku wierzcholkiTR.txt sprawdŸ, czy punkty zapisane w tym
+wierszu s¹ wierzcho³kami pewnego trójk¹ta prostok¹tnego. Podaj liczbê trójk¹tów prostok¹tnych
+zapisanych w tym pliku
+Uwaga: Takich trójk¹tów jest wiêcej ni¿ cztery.
+*/
+
+void z4() {
+	cout << "Zadanie 4:" << endl;
+	int counter = 0;
+	double d1, d2, d3;
+	for (int i = 0; i < SIZE; i++) {
+		d1 = pow(tab[i][0] - tab[i][2], 2) + pow(tab[i][1] - tab[i][3], 2);
+		d2 = pow(tab[i][0] - tab[i][4], 2) + pow(tab[i][1] - tab[i][5], 2);
+		d3 = pow(tab[i][2] - tab[i][4], 2) + pow(tab[i][3] - tab[i][5], 2);
+		if (d1 + d2 == d3 ||
+			d1 + d3 == d2 ||
+			d3 + d2 == d1) { // Bez potêgowania tutaj i bez podzielenia wy¿ej bo w c++ wychodz¹ niedok³adne wyniki
+			counter++;
+		}
+	}
+	cout << counter << endl << endl;
+}
+
 int main() {
 	ifstream in("wierzcholki.txt");
 	for (int i = 0; i < SIZE; i++) {
@@ -125,4 +156,5 @@ int main() {
 	in.close();
 	
 	z3();
+	z4();
 }
