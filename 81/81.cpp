@@ -17,6 +17,8 @@ oddzielone pojedynczymi znakami tabulacji.
 Zadanie 1:
 2
 
+Zadanie 2:
+24
 */
 
 const int SIZE = 100;
@@ -41,6 +43,33 @@ void z1() {
 	cout << counter << endl << endl;
 }
 
+/* Zadanie 2
+Podaj liczbê wierszy z pliku wierzcholki.txt, w których zapisane s¹ wspó³rzêdne punktów
+le¿¹cych na jednej prostej.
+
+Ten wzór nie by³ podany w poleceniu ale jest chyba w tablicach (wzór na wspó³czynnik kieunkowy):
+a = (yb - ya) / (xb - xa)
+
+Trzeba go przy porównaniu przekszta³ciæ ¿eby nie wystêpowa³o ewentualne dzielenie przez 0
+*/
+
+void z2() {
+	cout << "Zadanie 2:" << endl;
+	int counter = 0;
+	for (int i = 0; i < SIZE; i++) {
+		int x1 = tab[i][0];
+		int y1 = tab[i][1];
+		int x2 = tab[i][2];
+		int y2 = tab[i][3];
+		int x3 = tab[i][4];
+		int y3 = tab[i][5];
+		if ((y2 - y1) * (x3 - x2) == (y3 - y2) * (x2 - x1)) { // Ze wzoru z polecenia
+			counter++;
+		}
+	}
+	cout << counter << endl << endl;
+}
+
 int main() {
 	ifstream in("wierzcholki.txt");
 	for (int i = 0; i < SIZE; i++) {
@@ -51,4 +80,5 @@ int main() {
 	in.close();
 	
 	z1();
+	z2();
 }
