@@ -18,6 +18,9 @@ Zadanie 1:
 
 Zadanie 2:
 29694
+
+Zadanie 3:
+2343790
 */
 
 const int SIZE = 500;
@@ -73,6 +76,27 @@ void z2() {
 	cout << max << endl << endl;
 }
 
+/* Zadanie 3
+Podaj, ile nieprzystaj¹cych trójk¹tów mo¿na utworzyæ z odcinków o d³ugoœciach podanych
+w pliku dane_trojkaty.txt. 
+Uwaga: Dwa trójk¹ty s¹ przystaj¹ce wtedy i tylko wtedy, gdy trzy boki jednego trójk¹ta s¹
+odpowiednio równe trzem bokom drugiego trójk¹ta, np. trójk¹t o bokach (10, 18, 15) jest
+przystaj¹cy z trójk¹tem o bokach (18, 15, 10). 
+*/
+
+void z3() {
+	cout << "Zadanie 3:" << endl;
+	int counter = 0;
+	for (int i = 0; i < SIZE - 2; i++) {
+		for (int j = i + 1; j < SIZE - 1; j++) {
+			for (int k = j + 1; k < SIZE; k++) {
+				if (saTrojkatem(tab[i], tab[j], tab[k])) counter++;
+			}
+		}
+	}
+	cout << counter << endl << endl;
+}
+
 int main() {
 	ifstream in("dane_trojkaty.txt");
 	for (int i = 0; i < SIZE; i++) {
@@ -82,4 +106,5 @@ int main() {
 	
 	z1();
 	z2();
+	z3();
 }
