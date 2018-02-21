@@ -15,6 +15,9 @@ Zadanie 1:
 13, 85, 84
 33, 65, 56
 28, 45, 53
+
+Zadanie 2:
+29694
 */
 
 const int SIZE = 500;
@@ -45,6 +48,31 @@ void z1() {
 	cout << endl;
 }
 
+/* Zadanie 2
+Podaj najwiêkszy obwód trójk¹ta, którego boki maj¹ d³ugoœci równe liczbom wystêpuj¹cym
+w ró¿nych wierszach pliku dane_trojkaty.txt. 
+*/
+
+bool saTrojkatem(int a, int b, int c) {
+	return (a + b > c && a + c > b && b + c > a);
+}
+
+void z2() {
+	cout << "Zadanie 2:" << endl;
+	int max = 0;
+	for (int i = 0; i < SIZE - 2; i++) {
+		for (int j = i + 1; j < SIZE - 1; j++) {
+			for (int k = j + 1; k < SIZE; k++) {
+				if (saTrojkatem(tab[i], tab[j], tab[k])) {
+					int obwod = tab[i] + tab[j] + tab[k];
+					if (obwod > max) max = obwod;
+				}
+			}
+		}
+	}
+	cout << max << endl << endl;
+}
+
 int main() {
 	ifstream in("dane_trojkaty.txt");
 	for (int i = 0; i < SIZE; i++) {
@@ -53,4 +81,5 @@ int main() {
 	in.close();
 	
 	z1();
+	z2();
 }
