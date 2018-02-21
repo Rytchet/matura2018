@@ -28,6 +28,12 @@ Obwod: 316.34
 
 Zadanie 4:
 18
+
+Zadanie 5: / Tylko ostatnie wspó³rzêdne zgadzaj¹ siê z kluczem
+-5, 7; 42, 48; -1, -7; -48, -48
+-2, 27; -6, -23; -3, -49; 1, 1
+-42, -46; 1, -34; 5, -26; -38, -38
+-14, 49; 27, 39; 48, -3; 7, 7
 */
 
 const int SIZE = 100;
@@ -135,6 +141,32 @@ void z4() {
 	cout << counter << endl << endl;
 }
 
+/* Zadanie 5
+Dla ka¿dego wiersza z pliku wierzcholkiTR.txt, w
+których zapisane s¹ kolejno wspó³rzêdne punktów A, B i C,
+wyznacz wspó³rzêdne punktu D, tak aby czworok¹t ABCD
+by³ równoleg³obokiem. Podaj wspó³rzêdne wszystkich wierzcho³ków
+czworok¹tów ABCD, których punkt D le¿y na prostej y=x. 
+Spoko rysunek w zbiorze.
+Hint: Trzeba dzia³aæ na przek¹tnych
+*/
+
+void z5() {
+	cout << "Zadanie 5:" << endl;
+	int deltaAx, deltaAy, x, y;
+	for (int i = 0; i < SIZE; i++) {
+		x = tab[i][0] + tab[i][4] - tab[i][2]; // xa + xc = xb + xd
+		y = tab[i][1] + tab[i][5] - tab[i][3]; // ya + yc = yb + yd
+		if (x == y) {
+			cout << tab[i][0] << ", " << tab[i][1] << "; ";
+			cout << tab[i][2] << ", " << tab[i][3] << "; ";
+			cout << tab[i][4] << ", " << tab[i][5] << "; ";
+			cout << x << ", " << y << endl;
+		}
+	}
+	cout << endl;
+}
+
 int main() {
 	ifstream in("wierzcholki.txt");
 	for (int i = 0; i < SIZE; i++) {
@@ -157,4 +189,5 @@ int main() {
 	
 	z3();
 	z4();
+	z5();
 }
