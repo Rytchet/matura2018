@@ -35,9 +35,9 @@ Zadanie | Trudność | Komentarz
 67 | ★★★★★ | Ciąg Fibonacciego, rysunek fraktala
 68 | ★★★☆☆ | Anagramy, działania na stringach
 69 | ★★★★★ | Działania na stringach (genomy)
-70 | ★★★★★ | Działania na stringach (genomy)
+70 | ★★★★★ | *Zadanie z matematyki*
 71 | ★★★★★ | *Zadanie z matematyki*
-72 | ★☆☆☆☆ | *Zadanie z matematyki*
+72 | ★☆☆☆☆ | Podstawowe działania na stringach
 73 | ★★★★☆ | Porównywanie słów, liczenie częstotliwości
 74 | ★★☆☆☆ | Działania na stringach (hasła)
 75 | ★★★★☆ | Szyfrowanie afiniczne
