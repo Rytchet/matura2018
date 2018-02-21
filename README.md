@@ -44,6 +44,8 @@ Zadanie | Trudność | Komentarz
 76 | ★★★☆☆ | Szyfrowanie przestawieniowe
 77 | ★★★★★ | Szyfr Vingerere'a
 78 | ★★★★★ | *Okropne zadanie z szyfrowaniem*
+79 | ★★☆☆☆ | Okręgi
+80 | ★★★☆☆ | Trójkąty
 
 Zadania w *kursywie* nie są rozwiązane
 
