@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cmath>
 using namespace std;
 
 /* Treœæ
@@ -40,11 +41,6 @@ cwiartce.
  III | IV
  
 */
-
-double abs(double n) {
-  if (n >= 0) return n;
-  return -n;
-}
 
 bool jestCwiartka(double x, double y, double r) {
   return (abs(x) > r && abs(y) > r);
@@ -128,6 +124,36 @@ void z3() {
 	cout << counter << endl << endl;
 }
 
+/* Zadanie 4
+Powiemy, ¿e ci¹g okrêgów tworzy ³añcuch, jeœli kolejne okrêgi tego ci¹gu maj¹ ze sob¹ co
+najmniej jeden punkt wspólny; przyjmujemy, ¿e ci¹g zawieraj¹cy tylko jeden okr¹g równie¿
+tworzy ³añcuch
+ZnajdŸ d³ugoœci wszystkich ³añcuchów tworzonych przez okrêgi zapisane w wierszach
+o numerach od 1 do 1000. Podaj d³ugoœæ najd³u¿szego ³añcucha. 
+*/
+
+double odlegloscMiedzyPunktami(double x1, double y1, double x2, double y2) {
+	return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+}
+
+void z4() {
+	cout << "Zadanie 4:" << endl;
+	int lancuch = 0;
+	int max = 0;
+	for (int i = 0; i < 1000; i++) {
+		lancuch++;
+		if (lancuch > max) max = lancuch;
+		if (odlegloscMiedzyPunktami(tab[i][0], tab[i][1], tab[i+1][0], tab[i+1][1]) <= tab[i][2]) {
+			continue;
+		}
+		else {
+			cout << lancuch << ", ";
+			lancuch = 0;
+		}
+	}
+	cout << endl << "Najdluzszy: " << max << endl << endl;
+}
+
 int main() {
   ifstream in("okregi.txt");
   double a, b, c;
@@ -142,4 +168,5 @@ int main() {
   z1();
   z2();
   z3();
+  z4();
 }
