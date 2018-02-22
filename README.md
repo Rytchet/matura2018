@@ -23,6 +23,9 @@ Rozwiązania do zadań w przygotowaniu do matury z informatyki 2018
 
 Zadanie | Trudność | Komentarz
 ------- | -------- | ---------
+matura 2015 | ★★☆☆☆ | Długie liczby binarne
+matura 2016 | ★★☆☆☆ | Szyfr Cezara
+matura 2017 | ★☆☆☆☆ | Dwuwymiarowa tablica
 58 | ★★★☆☆ | Zamiana między dwójkowym, czwórkowym i ósemkowym
 59 | ★★★☆☆ | Liczby pierwsze, rozkład na czynniki, palindromy
 60 | ★★☆☆☆ | Dzielniki, liczby względnie pierwsze
