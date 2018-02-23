@@ -46,7 +46,7 @@ matura 2017 | ★☆☆☆☆ | Dwuwymiarowa tablica
 75 | ★★★★☆ | Szyfrowanie afiniczne
 76 | ★★★☆☆ | Szyfrowanie przestawieniowe
 77 | ★★★★★ | Szyfr Vingerere'a
-78 | ★★★★★ | *Okropne zadanie z szyfrowaniem*
+78 | ★★★★★ | Podpis elektroniczny, deszyfrowanie
 79 | ★★☆☆☆ | Okręgi
 80 | ★★★☆☆ | Trójkąty
 81 | ★★★★☆ | Współrzędne
