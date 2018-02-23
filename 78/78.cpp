@@ -35,36 +35,17 @@ UIZVEUSE
 DMWHUXTH
 UFHRHSXM
 TFUKGFXW
+
+Zadanie 3:
+1
+3
+4
+8
+9
+11
 */
 
-string skrot(string wiadomosc) {
-	int S[8] = {'A','L','G','O','R','Y','T','M'};
-	while (wiadomosc.length() % 8 != 0) {
-		wiadomosc += '.';
-	}
-	
-	// Do pierwszego zadania
-//	cout << wiadomosc.length() << endl; 
-	
-	int j = 0;
-	for (int i = 0; i < wiadomosc.length(); i++) {
-		S[j] = (S[j] + wiadomosc[i]) % 128;
-		j++;
-		if (j == 8) j = 0;
-	}
-	string wynik = "";
-	
-	// Do pierwszego zadania
-//	for (int i = 0; i < 8; i++) {
-//		cout << S[i] << " ";
-//	}
-//	cout << endl;
-	
-	for (int j = 0; j < 8; j++) {
-		wynik = wynik + (char) (65 + S[j] % 26);
-	}
-	return wynik;
-}
+bool zadaniePierwsze = true;
 
 /* Zadanie 1
 Wyznacz skrót pierwszej wiadomoœci z pliku wiadomosci.txt i udokumentuj wyniki
@@ -78,10 +59,44 @@ znakami odstêpu,
 angielskiego. 
 */
 
+string skrot(string wiadomosc) {
+	int S[8] = {'A','L','G','O','R','Y','T','M'};
+	while (wiadomosc.length() % 8 != 0) {
+		wiadomosc += '.';
+	}
+	
+	if (zadaniePierwsze) cout << wiadomosc.length() << endl; 
+	
+	int j = 0;
+	for (int i = 0; i < wiadomosc.length(); i++) {
+		S[j] = (S[j] + wiadomosc[i]) % 128;
+		j++;
+		if (j == 8) j = 0;
+	}
+	string wynik = "";
+	
+	if (zadaniePierwsze) {
+		for (int i = 0; i < 8; i++) {
+			cout << S[i] << " ";
+		}
+		cout << endl;
+	}
+	
+	for (int j = 0; j < 8; j++) {
+		wynik = wynik + (char) (65 + S[j] % 26);
+	}
+	return wynik;
+}
+
+
+
 void z1() {
 	cout << "Zadanie 1: " << endl;
-	string s = "W sieci mozna udawac wszystko z wyjatkiem tego co sie naprawde liczy. Nie mozesz udawac inteligencji, poczucia humoru ani blyskotliwosci, zlosliwosci, przewrotnosci, ani calej reszty twojej paskudnej, fascynujacej osobowosci.";
+	ifstream in("wiadomosci.txt");
+	string s;
+	getline(in, s);
 	cout << skrot(s) << endl << endl;
+	zadaniePierwsze = false;
 }
 
 /* Zadanie 2
@@ -90,27 +105,52 @@ w pliku podpisy.txt, stosuj¹c algorytm A z kluczem publicznym (d,n) = (3,200). Z
 uzyskane skróty w kolejnych, osobnych wierszach pliku z odpowiedziami. 
 */
 
+string odszyfrujSkrot(int tab[], int d, int n) {
+	string ans = "";
+	for (int i = 0; i < 8; i++) {
+		tab[i] = (tab[i] * 3 % 200);
+		ans += (char) tab[i];
+	}
+	return ans;
+}
+
 void z2() {
 	cout << "Zadanie 2:" << endl;
 	ifstream in("podpisy.txt");
 	int tab[8];
 	string ans;
 	for (int q = 0; q < 11; q++) { // 11 kluczy w pliku
-		ans = "";
 		for (int i = 0; i < 8; i++) {
 			in >> tab[i];
-			tab[i] = (tab[i] * 3 % 200);
-			ans += (char) tab[i];
 		}
+		ans = odszyfrujSkrot(tab, 3, 200);
 		cout << ans << endl;
 	}
+	cout << endl;
 }
 
 /* Zadanie 3
-
+Zweryfikuj wiarygodnoœæ wszystkich wiadomoœci i podaj numery wiadomoœci wiarygodnych.
+Zapisz w jednym wierszu pliku z odpowiedziami, jako liczby z zakresu 1..11, zgodnie z kolejnoœci¹
+umieszczenia ich w pliku danych, oddzielone pojedynczym znakiem odstêpu. 
 */
+
+void z3() {
+	cout << "Zadanie 3:" << endl;
+	ifstream inWiadomosc("wiadomosci.txt");
+	ifstream inPodpis("podpisy.txt");
+	string wiadomosc;
+	int tab[8];
+	for (int i = 0; i < 11; i++) {
+		getline(inWiadomosc, wiadomosc);
+		for (int j = 0; j < 8; j++) inPodpis >> tab[j];
+		if (skrot(wiadomosc) == odszyfrujSkrot(tab, 3, 200)) cout << i + 1 << endl;
+	}
+	cout << endl;
+}
 
 int main() {
 	z1();
 	z2();
+	z3();
 }
