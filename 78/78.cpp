@@ -18,7 +18,23 @@ drugi — drugiej itd.)
 */
 
 /* Wyniki
+Zadanie 1:
+232
+12 94 94 57 96 115 51 90
+MQQFSLZM
 
+Zadanie 2:
+MQQFSLZM
+WWXRFKEC
+UAQFAKQN
+WVTFWMLI
+WMXQBVTU
+IRCEIIDN
+DLGULFST
+UIZVEUSE
+DMWHUXTH
+UFHRHSXM
+TFUKGFXW
 */
 
 string skrot(string wiadomosc) {
@@ -28,7 +44,7 @@ string skrot(string wiadomosc) {
 	}
 	
 	// Do pierwszego zadania
-	cout << wiadomosc.length() << endl; 
+//	cout << wiadomosc.length() << endl; 
 	
 	int j = 0;
 	for (int i = 0; i < wiadomosc.length(); i++) {
@@ -39,10 +55,10 @@ string skrot(string wiadomosc) {
 	string wynik = "";
 	
 	// Do pierwszego zadania
-	for (int i = 0; i < 8; i++) {
-		cout << S[i] << " ";
-	}
-	cout << endl;
+//	for (int i = 0; i < 8; i++) {
+//		cout << S[i] << " ";
+//	}
+//	cout << endl;
 	
 	for (int j = 0; j < 8; j++) {
 		wynik = wynik + (char) (65 + S[j] % 26);
@@ -65,9 +81,36 @@ angielskiego.
 void z1() {
 	cout << "Zadanie 1: " << endl;
 	string s = "W sieci mozna udawac wszystko z wyjatkiem tego co sie naprawde liczy. Nie mozesz udawac inteligencji, poczucia humoru ani blyskotliwosci, zlosliwosci, przewrotnosci, ani calej reszty twojej paskudnej, fascynujacej osobowosci.";
-	cout << skrot(s) << endl;
+	cout << skrot(s) << endl << endl;
 }
+
+/* Zadanie 2
+Odszyfruj skróty wiadomoœci ze wszystkich podpisów elektronicznych umieszczonych
+w pliku podpisy.txt, stosuj¹c algorytm A z kluczem publicznym (d,n) = (3,200). Zapisz
+uzyskane skróty w kolejnych, osobnych wierszach pliku z odpowiedziami. 
+*/
+
+void z2() {
+	cout << "Zadanie 2:" << endl;
+	ifstream in("podpisy.txt");
+	int tab[8];
+	string ans;
+	for (int q = 0; q < 11; q++) { // 11 kluczy w pliku
+		ans = "";
+		for (int i = 0; i < 8; i++) {
+			in >> tab[i];
+			tab[i] = (tab[i] * 3 % 200);
+			ans += (char) tab[i];
+		}
+		cout << ans << endl;
+	}
+}
+
+/* Zadanie 3
+
+*/
 
 int main() {
 	z1();
+	z2();
 }
