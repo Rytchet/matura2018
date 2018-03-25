@@ -1,0 +1,24 @@
+1
+Bialaszewski Wiktor
+Cicherski Szymon
+Florek Sandra
+Kaminski Mikolaj
+Krol Malgorzata
+
+2
+55.6
+Broszkow Zofia
+Majtas Lucja
+Murczynska Laura
+Odya Kacper
+Sochacka Inka
+Sokolnicka Inga
+
+3
+Grzelecki Oliwier
+Przytula Jakub
+Rembiewski Jakub
+Wojcicki Aleks
+
+5
+300
