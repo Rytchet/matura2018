@@ -1,0 +1,42 @@
+1
+Katowice
+57
+Politechnika Informatyczno-Elektroniczna
+
+2
+143
+2256
+
+4
+Akademia Sztuk Pieknych 32  10  6   2   5
+Politechnika Informatyczno-Elektroniczna    299 108 48  54  54
+Politechnika Krolewska  168 59  28  31  25
+Uniwersytet Ekonomiczny 32  9   3   2   7
+Uniwersytet Krolewski   233 77  53  32  61
+Uniwersytet Muzyczny    5   2       1   
+Uniwersytet Pedagogiczny    31  11  4   2   5
+Uniwersytet Rolniczy    27  14  7   5   6
+Uniwersytet Sportu i Turystyki  24  5   6   3   5
+Wyzsza Szkoła Techniczna    8   1   1       5
+
+5
+Iwona   Andrzejewska    Ruda Slaska 2241
+Jacek   Andrzejewski    Ruda Slaska 2241
+Anna    Barska  Ogrodzieniec    1047
+Barbara Barska  Ogrodzieniec    1047
+Krzysztof   Barski  Ogrodzieniec    1047
+Joanna  Bilska  Kedzierzyn-Kozle    2807
+Michal  Bilski  Kedzierzyn-Kozle    2807
+Waclawa Borkowska   Szczyrk 1683
+Sylwester   Borkowski   Szczyrk 1683
+Piotr   Jablonski   Sanok   1185
+Zygmunt Jablonski   Sanok   1185
+Weronika    Kaczmarek   Wodzislaw Slaski    1140
+Tomasz  Kaczmarek   Wodzislaw Slaski    1140
+Przemyslaw  Kaczmarek   Wodzislaw Slaski    1140
+Klaudia Kotowicz    Katowice    1950
+Tadeusz Kotowicz    Katowice    1950
+Boguslawa   Ostrowska   Tarnowskie Gory 2466
+Felicja Ostrowska   Tarnowskie Gory 2466
+Robert  Tomaszewski Wisla   1511
+Bartosz Tomaszewski Wisla   1511
